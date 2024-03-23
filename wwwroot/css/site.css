@@ -1,0 +1,87 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 3em;
+}
+
+#bookListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: left;
+  gap: 50px 20px;
+  padding: 50px 0;
+}
+
+#bookListContainer > div {
+  background-color: white;
+  padding: 1em;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#bookListContainer > div > p {
+  width: fit-content;
+  max-width: 200px;
+}
+
+#bookListContainer > div > h2 {
+  font-size: 1.75em;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+}
+
+.titleDivider {
+  width: 100%;
+  height: 1px;
+  background-color: #adadad;
+  margin: 0 0 1em 0;
+}
+
+#paginationNavigation {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+#paginationNavigation > a {
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: grey;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#paginationNavigation > a:hover {
+  background-color: #2727a3;
+}
