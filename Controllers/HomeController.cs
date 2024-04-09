@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Intex.Models;
 using Intex.Models.ViewModels;
@@ -11,6 +10,41 @@ public class HomeController : Controller
     public HomeController(IIntexRepository temp)
     {
         _repo = temp;
+    }
+
+    public IActionResult AboutUs()
+    {
+        return View();
+    }
+    public IActionResult Products()
+    {
+        return View();
+    }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+    public IActionResult Login()
+    {
+        return View();
+    }
+
+    public IActionResult AdminHome()
+    {
+        return View();
+    }
+
+    public IActionResult EditProducts()
+    {
+        return View();
+    }
+    public IActionResult EditUsers()
+    {
+        return View();
+    }
+    public IActionResult Fraud()
+    {
+        return View();
     }
 
     public IActionResult Index(int pageNum = 1)
