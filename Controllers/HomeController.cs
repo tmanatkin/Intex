@@ -30,6 +30,24 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult AdminHome()
+    {
+        return View();
+    }
+
+    public IActionResult EditProducts()
+    {
+        return View();
+    }
+    public IActionResult EditUsers()
+    {
+        return View();
+    }
+    public IActionResult Fraud()
+    {
+        return View();
+    }
+
     public IActionResult Index(int pageNum)
     {
 
