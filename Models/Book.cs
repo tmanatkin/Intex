@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Mission11.Models;
+namespace Intex.Models;
 
 public partial class Book
 {

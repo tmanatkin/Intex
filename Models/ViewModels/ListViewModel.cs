@@ -1,6 +1,6 @@
-namespace Mission11.Models.ViewModels
+namespace Intex.Models.ViewModels
 {
-    public class BookListViewModel
+    public class ListViewModel
     {
         public IQueryable<Book> Books { get; set; }
         public PaginationInfo PaginationInfo { get; set; } = new PaginationInfo();

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mission11.Models;
+namespace Intex.Models;
 
-public partial class BookstoreContext : DbContext
+public partial class IntexContext : DbContext
 {
-    public BookstoreContext()
+    public IntexContext()
     {
     }
 
-    public BookstoreContext(DbContextOptions<BookstoreContext> options)
+    public IntexContext(DbContextOptions<IntexContext> options)
         : base(options)
     {
     }
@@ -19,7 +19,10 @@ public partial class BookstoreContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlite("Data Source=Bookstore.sqlite");
+        => optionsBuilder.UseSqlServer("IntexConnection");
+        // optionsBuilder.UseSqlite("Data Source=Bookstore.sqlite");
+        //     options.UseSqlServer(builder.Configuration["ConnectionStrings:IntexConnection"]);
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

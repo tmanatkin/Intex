@@ -1,17 +1,17 @@
 using Microsoft.EntityFrameworkCore;
-using Mission11.Models;
+using Intex.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<BookstoreContext>(options =>
+builder.Services.AddDbContext<IntexContext>(options =>
 {
-    options.UseSqlite(builder.Configuration["ConnectionStrings:BookstoreConnection"]);
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:IntexConnection"]);
 });
 
-builder.Services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
 
 var app = builder.Build();
 

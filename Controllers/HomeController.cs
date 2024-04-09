@@ -1,14 +1,14 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Mission11.Models;
-using Mission11.Models.ViewModels;
+using Intex.Models;
+using Intex.Models.ViewModels;
 
-namespace Mission11.Controllers;
+namespace Intex.Controllers;
 
 public class HomeController : Controller
 {
-   private IBookstoreRepository _repo;
-    public HomeController(IBookstoreRepository temp)
+   private IIntexRepository _repo;
+    public HomeController(IIntexRepository temp)
     {
         _repo = temp;
     }
@@ -18,7 +18,7 @@ public class HomeController : Controller
 
         int pageSize = 10;
 
-        var data = new BookListViewModel
+        var data = new ListViewModel
         {
             Books = _repo.Books
                     .Skip((pageNum - 1) * pageSize)
