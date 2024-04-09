@@ -3,18 +3,18 @@
 <h1>Intex</h1>
 
 <div id="listContainer">
-@foreach (Book b in Model.Books)
+@foreach (Product p in Model.Products)
 {
     <div>
-        <h2>@b.Title</h2>
-        <div class="titleDivider"></div>
+        <h2>@p.Name</h2>
+        @* <div class="titleDivider"></div>
         <p><strong>Author:</strong> @b.Author</p>
         <p><strong>Publisher:</strong> @b.Publisher</p>
         <p><strong>ISBN:</strong> @b.Isbn</p>
         <p><strong>Classification:</strong> @b.Classification</p>
         <p><strong>Category:</strong> @b.Category</p>
         <p><strong>Page Count:</strong> @b.PageCount</p>
-        <p><strong>Price:</strong> $@b.Price</p>
+        <p><strong>Price:</strong> $@b.Price</p> *@
     </div>
 }
 </div>

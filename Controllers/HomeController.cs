@@ -20,13 +20,13 @@ public class HomeController : Controller
 
         var data = new ListViewModel
         {
-            Books = _repo.Books
+            Products = _repo.Products
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize),
 
             PaginationInfo = new PaginationInfo
             {
-                TotalNumItems = _repo.Books.Count(),
+                TotalNumItems = _repo.Products.Count(),
                 NumItemsPerPage = pageSize,
                 CurrentPageNum = pageNum
             }

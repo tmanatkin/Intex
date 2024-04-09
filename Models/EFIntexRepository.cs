@@ -7,6 +7,6 @@ namespace Intex.Models
       {
         _context = temp;
       }
-        public IQueryable<Book> Books => _context.Books;
+        public IQueryable<Product> Products => _context.Products;
     }
 }
