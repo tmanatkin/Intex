@@ -5,17 +5,17 @@ namespace Intex.Models;
 
 public partial class Customer
 {
-    public int? CustomerId { get; set; }
+    public short? CustomerId { get; set; }
 
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }
 
-    public string? BirthDate { get; set; }
+    public DateTime? BirthDate { get; set; }
 
     public string? CountryOfResidence { get; set; }
 
     public string? Gender { get; set; }
 
-    public double? Age { get; set; }
+    public float? Age { get; set; }
 }

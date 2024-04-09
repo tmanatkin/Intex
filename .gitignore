@@ -69,3 +69,4 @@ sysdumps/
 
 # Phoenix Phenix generated files
 *.Phenix.config.xml
+.DS_Store

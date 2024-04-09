@@ -13,7 +13,7 @@ public class HomeController : Controller
         _repo = temp;
     }
 
-    public IActionResult Index(int pageNum)
+    public IActionResult Index(int pageNum = 1)
     {
 
         int pageSize = 10;
