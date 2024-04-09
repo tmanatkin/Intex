@@ -13,6 +13,23 @@ public class HomeController : Controller
         _repo = temp;
     }
 
+    public IActionResult AboutUs()
+    {
+        return View();
+    }
+    public IActionResult Products()
+    {
+        return View();
+    }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+    public IActionResult Login()
+    {
+        return View();
+    }
+
     public IActionResult Index(int pageNum)
     {
 
