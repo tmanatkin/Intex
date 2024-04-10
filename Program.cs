@@ -1,5 +1,7 @@
+using Azure.Identity;
 using Microsoft.EntityFrameworkCore;
 using Intex.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,13 @@ builder.Services.AddDbContext<IntexContext>(options =>
     options.UseSqlServer(builder.Configuration["ConnectionStrings:IntexConnection"]);
 });
 
+// key vault stuff
 builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
+ConfigurationBuilder azureBuilder = new ConfigurationBuilder();
+azureBuilder.AddAzureKeyVault(new Uri("https://IntexVault311.vault.azure.net/"), new DefaultAzureCredential());
+IConfiguration configuration = azureBuilder.Build();
+string mySecretValue = configuration["MySecret"];
+Console.WriteLine($"My secret value is: {mySecretValue}");
 
 var app = builder.Build();
 
