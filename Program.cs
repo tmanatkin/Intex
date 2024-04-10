@@ -17,7 +17,7 @@ ConfigurationBuilder azureBuilder = new ConfigurationBuilder();
 azureBuilder.AddAzureKeyVault(new Uri("https://IntexVault311.vault.azure.net/"), new DefaultAzureCredential());
 IConfiguration configuration = azureBuilder.Build();
 string connectionString = configuration["IntexConnectionString"];
-Console.WriteLine($"Connection string: {connectionString}");
+// Console.WriteLine($"Connection string: {connectionString}");
 
 var dbContextOptions = new DbContextOptionsBuilder<IntexContext>()
     .UseSqlServer(connectionString)
