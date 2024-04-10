@@ -1,26 +1,25 @@
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <title>title</title>
+    <link rel="stylesheet" href="~/css/admin.css"></link>
 </head>
 <body>
-<div>
+<div class="container">
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EditProducts">Edit Products</a>
+        <a class="btn" asp-area="" asp-controller="Home" asp-action="EditProducts">Edit Products</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="EditUsers">Edit Users</a>
+        <a class="btn" asp-area="" asp-controller="Home" asp-action="EditUsers">Edit Users</a>
     </li>  
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Fraud">Review Fraud Charges</a>
+        <a class="btn" asp-area="" asp-controller="Home" asp-action="Fraud">Review Fraud Charges</a>
     </li>
-
 </div>
 </body>
 </html>

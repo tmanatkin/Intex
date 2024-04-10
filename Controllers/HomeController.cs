@@ -81,6 +81,8 @@ public class HomeController : Controller
         return View();
     }
 
+
+
     public IActionResult Index()
     {
         var data = new ListViewModel
