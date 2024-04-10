@@ -23,7 +23,7 @@ public partial class IntexContext : DbContext
 
     public virtual DbSet<LineItem> LineItems { get; set; }
 
-    public virtual DbSet<Order> Orders { get; set; }
+    public virtual DbSet<Orders> Orderss { get; set; }
 
     public virtual DbSet<Product> Products { get; set; }
 
@@ -67,11 +67,11 @@ public partial class IntexContext : DbContext
             entity.Property(e => e.TransactionId).HasColumnName("transaction_ID");
         });
 
-        modelBuilder.Entity<Order>(entity =>
+        modelBuilder.Entity<Orders>(entity =>
         {
             entity
                 .HasNoKey()
-                .ToTable("order");
+                .ToTable("orders");
 
             entity.Property(e => e.Amount).HasColumnName("amount");
             entity.Property(e => e.Bank).HasColumnName("bank");
