@@ -11,5 +11,6 @@ namespace Intex.Models
         public IQueryable<Orders> Orderss => _context.Orderss;
         public IQueryable<Customer> Customers => _context.Customers;
         public IQueryable<LineItem> LineItems => _context.LineItems;
+        public IQueryable<ItemRecommendation> ItemRecommendations => _context.ItemRecommendations;
     }
 }

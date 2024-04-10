@@ -5,6 +5,7 @@ using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Query;
+using System.Collections.Generic;
 
 namespace Intex.Controllers;
 
@@ -13,7 +14,7 @@ public class HomeController : Controller
     private IIntexRepository _repo;
     private readonly InferenceSession _session;
     private readonly string _onnxModelPath;
-    private readonly ItemRecommendations.ProductService _recommendationService;
+    //private readonly ItemRecommendation.ProductService _recommendationService;
 
     public HomeController(IIntexRepository temp, IHostEnvironment hostEnvironment)
     {
@@ -25,16 +26,33 @@ public class HomeController : Controller
         _session = new InferenceSession(_onnxModelPath);
 
         // This is for Item Recommanmdations
-        _recommendationService = new ItemRecommendations.ProductService();
+        //_recommendationService = new ItemRecommendation.ProductService();
     }
 
     public IActionResult AboutUs()
     {
         return View();
     }
-    public IActionResult Products()
+    public IActionResult Products(int pageNum = 1)
     {
-        return View();
+
+        int pageSize = 10;
+
+        var data = new ListViewModel
+        {
+            Products = _repo.Products
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
+
+            PaginationInfo = new PaginationInfo
+            {
+                TotalNumItems = _repo.Products.Count(),
+                NumItemsPerPage = pageSize,
+                CurrentPageNum = pageNum
+            }
+        };
+
+        return View(data);
     }
     public IActionResult Privacy()
     {
@@ -63,39 +81,35 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Index(int pageNum = 1)
+    public IActionResult Index()
     {
-
-        int pageSize = 10;
-
         var data = new ListViewModel
         {
             Products = _repo.Products
-                    .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize),
+                    //.OrderByDescending(p => p.ra)
+                    //.Take(),
 
-            PaginationInfo = new PaginationInfo
-            {
-                TotalNumItems = _repo.Products.Count(),
-                NumItemsPerPage = pageSize,
-                CurrentPageNum = pageNum
-            }
+            
         };
 
         return View(data);
     }
 
-    //public IActionResult ProductDetail()
-    //{
-    //    // Load item recommendations from CSV file
-    //    List<ItemRecommendations.Recommendation> recommendations = _recommendationService.LoadProductsFromCsv("itemRecs.csv");
+    public IActionResult ProductDetail()
+    {
+        var recommendations = _repo.ItemRecommendations
+            .ToList();
+        
 
-    //    return View(recommendations);
-    //}
+        return View(recommendations);
+    }
 
     public IActionResult ReviewOrders()
     {
-        var records = _repo.Orderss.ToList();  // Fetch all records
+        var records = _repo.Orderss
+            .OrderByDescending(o => o.Date)
+            .Take(20)
+            .ToList();  // Fetch the 20 most recent records
         var predictions = new List<OrderPrediction>();  // Your ViewModel for the view
 
         // Dictionary mapping the numeric prediction to an animal type

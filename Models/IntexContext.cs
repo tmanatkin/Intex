@@ -27,6 +27,8 @@ public partial class IntexContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<ItemRecommendation> ItemRecommendations { get; set; }
+
 //     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 // // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
 //         => optionsBuilder.UseSqlServer("");
@@ -104,6 +106,22 @@ public partial class IntexContext : DbContext
             entity.Property(e => e.ProductId).HasColumnName("product_ID");
             entity.Property(e => e.SecondaryColor).HasColumnName("secondary_color");
             entity.Property(e => e.Year).HasColumnName("year");
+        });
+
+        modelBuilder.Entity<ItemRecommendation>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("itemRecs");
+
+            entity.Property(e => e.ProductId).HasColumnName("product_ID");
+            entity.Property(e => e.ProductName).HasColumnName("productName");
+            entity.Property(e => e.Rec1Id).HasColumnName("rec1_ID");
+            entity.Property(e => e.Rec1Name).HasColumnName("rec1_Name");
+            entity.Property(e => e.Rec2Id).HasColumnName("rec2_ID");
+            entity.Property(e => e.Rec2Name).HasColumnName("rec2_Name");
+            entity.Property(e => e.Rec3Id).HasColumnName("rec3_ID");
+            entity.Property(e => e.Rec3Name).HasColumnName("rec3_Name");
         });
 
         OnModelCreatingPartial(modelBuilder);
