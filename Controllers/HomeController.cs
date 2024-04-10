@@ -1,15 +1,31 @@
 using Microsoft.AspNetCore.Mvc;
 using Intex.Models;
 using Intex.Models.ViewModels;
+using Microsoft.ML.OnnxRuntime;
+using Microsoft.ML.OnnxRuntime.Tensors;
+using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Intex.Controllers;
 
 public class HomeController : Controller
 {
-   private IIntexRepository _repo;
-    public HomeController(IIntexRepository temp)
+    private IIntexRepository _repo;
+    private readonly InferenceSession _session;
+    private readonly string _onnxModelPath;
+    private readonly ItemRecommendations.ProductService _recommendationService;
+
+    public HomeController(IIntexRepository temp, IHostEnvironment hostEnvironment)
     {
         _repo = temp;
+
+        // These are for ReviewOrders
+        _onnxModelPath = System.IO.Path.Combine(hostEnvironment.ContentRootPath, "fraudModel.onnx");
+        //initialize the InferenceSession
+        _session = new InferenceSession(_onnxModelPath);
+
+        // This is for Item Recommanmdations
+        _recommendationService = new ItemRecommendations.ProductService();
     }
 
     public IActionResult AboutUs()
@@ -67,5 +83,96 @@ public class HomeController : Controller
         };
 
         return View(data);
+    }
+
+    //public IActionResult ProductDetail()
+    //{
+    //    // Load item recommendations from CSV file
+    //    List<ItemRecommendations.Recommendation> recommendations = _recommendationService.LoadProductsFromCsv("itemRecs.csv");
+
+    //    return View(recommendations);
+    //}
+
+    public IActionResult ReviewOrders()
+    {
+        var records = _repo.Orderss.ToList();  // Fetch all records
+        var predictions = new List<OrderPrediction>();  // Your ViewModel for the view
+
+        // Dictionary mapping the numeric prediction to an animal type
+        var class_type_dict = new Dictionary<int, string>
+            {
+                { 0, "Not Fraud" },
+                { 1, "Fraud" }
+            };
+
+        foreach (var record in records)
+        {
+            // Calculate days since January 1, 2022
+            var january1_2022 = new DateTime(2022, 1, 1);
+            var daysSinceJan12022 = record.Date.HasValue ? Math.Abs((record.Date.Value - january1_2022).Days) : 0;
+
+            // Preprocess features to make them compatible with the model
+            var input = new List<float>
+                {
+                    (float)record.CustomerId, 
+                    (float)record.Time,    
+                    // fix amount if it's null
+                    (float)(record.Amount ?? 0),
+
+                    // fix date
+                    daysSinceJan12022,
+
+                    // Check the Dummy Coded Data
+                    record.DayOfWeek == "Mon" ? 1 : 0,
+                    record.DayOfWeek == "Sat" ? 1 : 0,
+                    record.DayOfWeek == "Sun" ? 1 : 0,
+                    record.DayOfWeek == "Thu" ? 1 : 0,
+                    record.DayOfWeek == "Tue" ? 1 : 0,
+                    record.DayOfWeek == "Wed" ? 1 : 0,
+
+                    record.EntryMode == "Pin" ? 1 : 0,
+                    record.EntryMode == "Tap" ? 1 : 0,
+
+                    record.TypeOfTransaction == "Online" ? 1 : 0,
+                    record.TypeOfTransaction == "POS" ? 1 : 0,
+
+                    record.CountryOfTransaction == "India" ? 1 : 0,
+                    record.CountryOfTransaction == "Russia" ? 1 : 0,
+                    record.CountryOfTransaction == "USA" ? 1 : 0,
+                    record.CountryOfTransaction == "UnitedKingdom" ? 1 : 0,
+
+                    // Use CountryOfTransaction if ShippingAddress is null
+                    (record.ShippingAddress ?? record.CountryOfTransaction) == "India" ? 1 : 0,
+                    (record.ShippingAddress ?? record.CountryOfTransaction) == "Russia" ? 1 : 0,
+                    (record.ShippingAddress ?? record.CountryOfTransaction) == "USA" ? 1 : 0,
+                    (record.ShippingAddress ?? record.CountryOfTransaction) == "UnitedKingdom" ? 1 : 0,
+
+                    record.Bank == "HSBC" ? 1 : 0,
+                    record.Bank == "Halifax" ? 1 : 0,
+                    record.Bank == "Lloyds" ? 1 : 0,
+                    record.Bank == "Metro" ? 1 : 0,
+                    record.Bank == "Monzo" ? 1 : 0,
+                    record.Bank == "RBS" ? 1 : 0,
+                    
+                    record.TypeOfCard == "Visa" ? 1 : 0
+                };
+            var inputTensor = new DenseTensor<float>(input.ToArray(), new[] { 1, input.Count });
+
+            var inputs = new List<NamedOnnxValue>
+                {
+                    NamedOnnxValue.CreateFromTensor("float_input", inputTensor)
+                };
+
+            string predictionResult;
+            using (var results = _session.Run(inputs))
+            {
+                var prediction = results.FirstOrDefault(item => item.Name == "output_label")?.AsTensor<long>().ToArray();
+                predictionResult = prediction != null && prediction.Length > 0 ? class_type_dict.GetValueOrDefault((int)prediction[0], "Unknown") : "Error in prediction";
+            }
+
+            predictions.Add(new OrderPrediction { Orderss = record, Prediction = predictionResult }); // Adds the animal information and prediction for that animal to AnimalPrediction viewmodel
+        }
+
+        return View(predictions);
     }
 }

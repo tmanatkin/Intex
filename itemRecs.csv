@@ -1,0 +1,38 @@
+product_ID,productName,rec1_ID,rec1_Name,rec2_ID,rec2_Name,rec3_ID,rec3_Name
+0,Star Wars Super Pack 3 in 1,3,Ahsoka's Starfighter and Vulture Droid,27,Spider Tank,1,LEGO¬Æ DC Universe Super Heroes Superman‚Ñ¢ Minifigure Clock
+1,LEGO¬Æ DC Universe Super Heroes Superman‚Ñ¢ Minifigure Clock,27,Spider Tank,35,Typewriter,32,Space Astronaut
+2,Harry Potter Classic Kit,24,Flying Ford Anglia,36,Talking Sorting Hat,33,"""Up"" House"
+3,Ahsoka's Starfighter and Vulture Droid,0,Star Wars Super Pack 3 in 1,32,Space Astronaut,27,Spider Tank
+4,Emergency Ambulance and Snowboarder,34,Street Skate Park,10,Fire Rescue Helicopter,33,"""Up"" House"
+5,Ferrari F1 Racer 1:8,28,John Deere 9700 Forage Harvester,15,Airport,9,Iconic Chess Set
+6,Air Canada Jet Plane,15,Airport,12,Coca-Cola Vending Machine,20,"Wheel Sets, Black"
+7,Batman's Buggy: The Escape of Mr. Freeze,20,"Wheel Sets, Black",22,Brick 2x2,19,4.5V Small Motor With Wheels (Small Version)
+8,Ice Cream Truck,34,Street Skate Park,10,Fire Rescue Helicopter,30,The Madrigal House
+9,Iconic Chess Set,15,Airport,30,The Madrigal House,14,Motorbike
+10,Fire Rescue Helicopter,34,Street Skate Park,4,Emergency Ambulance and Snowboarder,29,Retro Roller Skate
+11,King Tut,1,LEGO¬Æ DC Universe Super Heroes Superman‚Ñ¢ Minifigure Clock,0,Star Wars Super Pack 3 in 1,30,The Madrigal House
+12,Coca-Cola Vending Machine,6,Air Canada Jet Plane,20,"Wheel Sets, Black",19,4.5V Small Motor With Wheels (Small Version)
+13,Zoo Train,15,Airport,33,"""Up"" House",4,Emergency Ambulance and Snowboarder
+14,Motorbike,16,Surveillance Chopper,9,Iconic Chess Set,19,4.5V Small Motor With Wheels (Small Version)
+15,Airport,6,Air Canada Jet Plane,13,Zoo Train,9,Iconic Chess Set
+16,Surveillance Chopper,14,Motorbike,19,4.5V Small Motor With Wheels (Small Version),12,Coca-Cola Vending Machine
+17,LEGO Solar Cell,19,4.5V Small Motor With Wheels (Small Version),34,Street Skate Park,33,"""Up"" House"
+18,Battery Box,36,Talking Sorting Hat,0,Star Wars Super Pack 3 in 1,1,LEGO¬Æ DC Universe Super Heroes Superman‚Ñ¢ Minifigure Clock
+19,4.5V Small Motor With Wheels (Small Version),20,"Wheel Sets, Black",17,LEGO Solar Cell,14,Motorbike
+20,"Wheel Sets, Black",19,4.5V Small Motor With Wheels (Small Version),29,Retro Roller Skate,7,Batman's Buggy: The Escape of Mr. Freeze
+21,Baseplate,34,Street Skate Park,10,Fire Rescue Helicopter,33,"""Up"" House"
+22,Brick 2x2,21,Baseplate,10,Fire Rescue Helicopter,30,The Madrigal House
+23,Stitch,30,The Madrigal House,33,"""Up"" House",21,Baseplate
+24,Flying Ford Anglia,2,Harry Potter Classic Kit,36,Talking Sorting Hat,10,Fire Rescue Helicopter
+25,Roses,30,The Madrigal House,34,Street Skate Park,21,Baseplate
+26,Exotic Peacock,29,Retro Roller Skate,32,Space Astronaut,10,Fire Rescue Helicopter
+27,Spider Tank,33,"""Up"" House",34,Street Skate Park,10,Fire Rescue Helicopter
+28,John Deere 9700 Forage Harvester,34,Street Skate Park,10,Fire Rescue Helicopter,33,"""Up"" House"
+29,Retro Roller Skate,26,Exotic Peacock,32,Space Astronaut,34,Street Skate Park
+30,The Madrigal House,33,"""Up"" House",34,Street Skate Park,23,Stitch
+31,Paris,35,Typewriter,30,The Madrigal House,33,"""Up"" House"
+32,Space Astronaut,26,Exotic Peacock,29,Retro Roller Skate,34,Street Skate Park
+33,"""Up"" House",30,The Madrigal House,34,Street Skate Park,10,Fire Rescue Helicopter
+34,Street Skate Park,10,Fire Rescue Helicopter,4,Emergency Ambulance and Snowboarder,29,Retro Roller Skate
+35,Typewriter,30,The Madrigal House,33,"""Up"" House",27,Spider Tank
+36,Talking Sorting Hat,24,Flying Ford Anglia,2,Harry Potter Classic Kit,33,"""Up"" House"
