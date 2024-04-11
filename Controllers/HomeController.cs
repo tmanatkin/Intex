@@ -121,28 +121,6 @@ public class HomeController : Controller
 
         // Pass the ProductDetailViewModel object to the ProductDetail view
         return View(viewModel);
-
-        //// Retrieve the product details from the database based on the ID
-        //var product = _repo.Products.FirstOrDefault(p => p.ProductId == id);
-
-        //if (product == null)
-        //{
-        //    // Handle the case where the product is not found
-        //    return NotFound();
-        //}
-
-        //// Retrieve the recommendations for the product from the ItemRecommendation table
-        //var recommendations = _repo.ItemRecommendations.FirstOrDefault(r => r.ProductId == id);
-
-        //// Pass the product details and recommendations to the ProductDetail view
-        //var viewModel = new ProductDetailViewModel
-        //{
-        //    Product = product,
-        //    Recommendations = recommendations
-        //};
-
-        //// Pass the product details to the ProductDetail view
-        //return View(product);
     }
 
     public IActionResult ReviewOrders()

@@ -18,7 +18,11 @@
 @if (Model.Recommendations != null)
 {
     <ul>
-        <li>@Model.Recommendations.Rec1Name</li>
+        <a href="@Url.Action("ProductDetail", "Home", new { id = Model.Product.ProductId })">
+            @* <img src="@Model.Recommendations.Rec1Id" /> *@
+            <li>@Model.Recommendations.Rec1Name</li>
+        </a>
+        
         <li>@Model.Recommendations.Rec2Name</li>
         <li>@Model.Recommendations.Rec3Name</li>
     </ul>

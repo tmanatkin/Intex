@@ -14,7 +14,7 @@ namespace Intex.Pages
             _repo = temp;
         }
         public Cart? Cart { get; set; }
-        public string ReturnUrl { get; set; }  "/";
+        public string ReturnUrl { get; set; } = "/";
 
         public void OnGet(StringFormat returnUrl)
         {
