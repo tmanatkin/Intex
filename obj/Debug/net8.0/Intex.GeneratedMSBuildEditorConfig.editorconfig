@@ -186,22 +186,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/calebestes/413/Intex/Pages/Cart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2FydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/calebestes/413/Intex/Pages/_CartLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0NhcnRMYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/calebestes/413/Intex/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/calebestes/413/Intex/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/calebestes/413/Intex/Views/Home/AboutUs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dFVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
