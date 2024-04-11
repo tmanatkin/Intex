@@ -1,14 +1,19 @@
-@using Intex.Infrastructure
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
+@model ListViewModel
 
-@model Product
+<h1>LEGO BUILD</h1>
 
+<div id="listContainer">
+    @foreach (Product p in Model.Products)
+    {
+        <div>
+            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
+                <img src="@p.ImgLink" width="300px" />
+                <h2>@p.Name</h2>
+            </a>
+        </div>
 
-<form id=@Model.ProductId method="post" asp-page="/Cart">
-<input type="hidden" asp-for="ProductId" />
-<input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-<button type="submit" class="btn-outline-success btn-sm float-end">Submit</button>
-</form>
+    }
+</div>
+
+@* <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a> *@
+<div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Products"></div>

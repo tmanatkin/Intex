@@ -1,7 +1,14 @@
+@model Intex.Models.Product
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
+<h1>Product Details:</h1>
+<h1>@Model.Name</h1>
 
-<h2>title</h2>
+<div>
+    <img src="@Model.ImgLink" width="300px" />
+    <p>Description: @Model.Description</p>
+    <p>Category: @Model.Category</p>
+    <p>Price: $@Model.Price</p>
+    <p>Number of Parts: @Model.NumParts</p>
+    <p>Year: @Model.Year</p>
+    <P>Primary Color: @Model.PrimaryColor       Secondary Color: @Model.SecondaryColor</P>
+</div>
