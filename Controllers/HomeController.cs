@@ -83,6 +83,8 @@ public class HomeController : Controller
         return View();
     }
 
+
+
     public IActionResult Index()
     {
         List<int> productIds = new List<int> { 23, 21, 22, 20, 13 };

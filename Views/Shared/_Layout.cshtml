@@ -31,9 +31,14 @@
                 </li>
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                </li>  
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="AdminHome">Admin</a>
+                </li>
+                
                 @* @if (User.IsInRole("Admin")) *@
             </ul>
+            <partial name="_LoginPartial" />
             <div class="nav-end nav-right">
                 <a  asp-area="" asp-controller="Home" asp-action="Products">Cart</a>
                 <a  asp-area="" asp-controller="Home" asp-action="Login">Log In</a>
@@ -51,6 +56,7 @@
         <p>Group 3-11</p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
