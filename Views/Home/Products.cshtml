@@ -1,3 +1,4 @@
+@using Intex.Infrastructure;
 @model ListViewModel
 
 <h1>LEGO BUILD</h1>
@@ -10,6 +11,12 @@
                 <img src="@p.ImgLink" width="300px" />
                 <h2>@p.Name</h2>
             </a>
+
+            <form id=@p.ProductId method="post" asp-page="/Cart">
+                @* <input type="hidden" asp-for="ProductId" /> *@
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <button type="submit" class="btn-outline-success btn-sm float-end">Add to Cart</button>
+            </form>
         </div>
 
     }

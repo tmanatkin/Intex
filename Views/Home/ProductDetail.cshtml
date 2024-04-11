@@ -1,14 +1,39 @@
-@model Intex.Models.Product
+@model Intex.Models.ProductDetailViewModel
 
 <h1>Product Details:</h1>
-<h1>@Model.Name</h1>
+<h1>@Model.Product.Name</h1>
 
 <div>
-    <img src="@Model.ImgLink" width="300px" />
-    <p>Description: @Model.Description</p>
-    <p>Category: @Model.Category</p>
-    <p>Price: $@Model.Price</p>
-    <p>Number of Parts: @Model.NumParts</p>
-    <p>Year: @Model.Year</p>
-    <P>Primary Color: @Model.PrimaryColor       Secondary Color: @Model.SecondaryColor</P>
+    <img src="@Model.Product.ImgLink" width="300px" />
+    <p>Description: @Model.Product.Description</p>
+    <p>Category: @Model.Product.Category</p>
+    <p>Price: $@Model.Product.Price</p>
+    <p>Number of Parts: @Model.Product.NumParts</p>
+    <p>Year: @Model.Product.Year</p>
+    <p>Primary Color: @Model.Product.PrimaryColor</p>
+    <p>Secondary Color: @Model.Product.SecondaryColor</p>
 </div>
+
+<h2>Recommendations:</h2>
+@if (Model.Recommendations != null)
+{
+    <ul>
+        <a href="@Url.Action("ProductDetail", "Home", new { id = Model.Recommendations.Rec1Id + 1 })">
+            @* <img src="@GetImgLink(Model.Recommendations.Rec1Id)" alt="@Model.Recommendations.Rec1Name" / *@
+            @* <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec1Name" width="300px" /> *@
+            <li>@Model.Recommendations.Rec1Name</li>
+        </a>
+        <a href="@Url.Action("ProductDetail", "Home", new { id = Model.Recommendations.Rec2Id + 1 })">
+            <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec2Name" width="300px" />
+        <li>@Model.Recommendations.Rec2Name</li>
+        </a>
+        <a href="@Url.Action("ProductDetail", "Home", new { id = Model.Recommendations.Rec3Id + 1 })">
+            <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec3Name" width="300px" />
+        <li>@Model.Recommendations.Rec3Name</li>
+        </a>
+    </ul>
+}
+else
+{
+    <p>No recommendations available for this product.</p>
+}

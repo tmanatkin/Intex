@@ -54,11 +54,12 @@
 
     </style>
 
-<h2>Predictions</h2>
-@*         <div class="full-width-table">*@        
+<h2>Predictions for most recent 20 orders</h2>
+<h5>Scroll down to view only orders that are predicted to be fraud</h5>
+
 <table class="table table-bordered table-striped">
     <thead>
-        <tr>
+        <tr class="review-orders-cols-names">
             <th>TransactionId</th>
             <th>CustomerId</th>
             <th>Date</th>
@@ -78,7 +79,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="review-orders">
                 <td>@item.Orderss.TransactionId</td>
                 <td>@item.Orderss.CustomerId</td>
                 <td>@item.Orderss.Date</td>
@@ -94,6 +95,53 @@
                 <td>@item.Orderss.Fraud</td>
                 <td class="prediction-cell">@item.Prediction</td>
             </tr>
+        }
+    </tbody>
+</table>
+
+
+<h2>Only those predicted to be Fraud</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr class="review-orders-cols-names">
+            <th>TransactionId</th>
+            <th>CustomerId</th>
+            <th>Date</th>
+            <th>Day Of The Week</th>
+            <th>Time (Military Time)</th>
+            <th>Entry Mode</th>
+            <th>Amount</th>
+            <th>Type Of Transaction</th>
+            <th>Country Of Transaction</th>
+            <th>Shipping Address</th>
+            <th>Bank</th>
+            <th>Type Of Card</th>
+            <th>Fraud</th>
+            <th class="prediction-cell">Fraud Prediction</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (item.Prediction == "Fraud")
+            {
+                <tr>
+                    <td>@item.Orderss.TransactionId</td>
+                    <td>@item.Orderss.CustomerId</td>
+                    <td>@item.Orderss.Date</td>
+                    <td>@item.Orderss.DayOfWeek</td>
+                    <td>@item.Orderss.Time</td>
+                    <td>@item.Orderss.EntryMode</td>
+                    <td>@item.Orderss.Amount</td>
+                    <td>@item.Orderss.TypeOfTransaction</td>
+                    <td>@item.Orderss.CountryOfTransaction</td>
+                    <td>@item.Orderss.ShippingAddress</td>
+                    <td>@item.Orderss.Bank</td>
+                    <td>@item.Orderss.TypeOfCard</td>
+                    <td>@item.Orderss.Fraud</td>
+                    <td class="prediction-cell">@item.Prediction</td>
+                </tr>
+            }
         }
     </tbody>
 </table>

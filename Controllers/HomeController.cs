@@ -87,8 +87,18 @@ public class HomeController : Controller
             return NotFound();
         }
 
-        // Pass the product details to the ProductDetail view
-        return View(product);
+        // Retrieve recommendations for the product from the database
+        var recommendations = _repo.ItemRecommendations.FirstOrDefault(r => r.ProductId == id);
+
+        // Create a ProductDetailViewModel object and pass product details and recommendations to it
+        var viewModel = new ProductDetailViewModel
+        {
+            Product = product,
+            Recommendations = recommendations
+        };
+
+        // Pass the ProductDetailViewModel object to the ProductDetail view
+        return View(viewModel);
     }
 
     [Authorize(Roles = "Admin")]

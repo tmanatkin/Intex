@@ -40,6 +40,10 @@ var dbContextOptions = new DbContextOptionsBuilder<IntexContext>()
 builder.Services.AddSingleton(new IntexContext(dbContextOptions));
 
 builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
+builder.Services.AddRazorPages();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
         .AddRoles<IdentityRole>()
@@ -57,6 +61,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
