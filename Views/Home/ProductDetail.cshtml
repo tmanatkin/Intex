@@ -1,7 +1,32 @@
+@model ListViewModel
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
-
-<h2>title</h2>
+<table class="table">
+    <thead>
+        <tr>
+            @* <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Recommendation 1 ID</th> *@
+            <th>Recommendation 1 Name</th>
+            @* <th>Recommendation 2 ID</th> *@
+            <th>Recommendation 2 Name</th>
+            @* <th>Recommendation 3 ID</th> *@
+            <th>Recommendation 3 Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ItemRecommendation r in Model.ItemRecommendations)
+        {
+            <tr>
+                <td>@r.</td>
+                @* <td>@recommendation.product_ID</td>
+                <td>@recommendation.product_Name</td>
+                <td>@recommendation.rec1_Id</td> *@
+                <td>@r.Rec1Name</td>
+                @* <td>@recommendation.rec2_Id</td> *@
+                <td>@r.Rec1Name</td>
+                @* <td>@recommendation.rec3_Id</td> *@
+                <td>@r.Rec1Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

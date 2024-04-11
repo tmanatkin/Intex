@@ -1,7 +1,16 @@
+@model ListViewModel
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
+<h1>LEGO BUILD</h1>
 
-<h2>title</h2>
+<div id="listContainer">
+    @foreach (Product p in Model.Products)
+    {
+        <div>
+            <h2>@p.Name</h2>
+
+        </div>
+    }
+</div>
+
+@* <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a> *@
+<div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Products"></div>
