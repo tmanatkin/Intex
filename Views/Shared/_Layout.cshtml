@@ -6,25 +6,18 @@
     <title>LEGO BUILD</title>
     <!-- CSS / Bootstrap -->
     <link rel="stylesheet" href="~/css/style.css" />
-    <link rel="stylesheet" href="~/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="~/css/bootstrap-grid.rtl.css">
-    <link rel="stylesheet" href="~/css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="~/css/bootstrap-grid.rtl.css">
-    <link rel="stylesheet" href="~/css/bootstrap-utilities.css">
-    <link rel="stylesheet" href="~/css/bootstrap-utilities.rtl.css">
-    <link rel="stylesheet" href="~/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="~/lib/Legobuild (7).png">
-
 </head>
 <body>
     <header class="bg-yellow">
         <nav>
             <a class="nav-end nav-left" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/legoLogo.png" />
+                <img src="~/legoLogo.png"/>
             </a>
             <ul>
                 <li>
@@ -35,7 +28,7 @@
                 </li>
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                </li>
+                </li>            
             </ul>
             <partial name="_LoginPartial" />
         </nav>
