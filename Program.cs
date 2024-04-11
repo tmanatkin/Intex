@@ -10,6 +10,15 @@ using Intex.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+if (!builder.Environment.IsDevelopment())
+{
+    builder.Services.AddHsts(options =>
+    {
+        options.IncludeSubDomains = true; // Optional: Include subdomains
+        options.MaxAge = TimeSpan.FromDays(365); // Optional: Set the duration of HSTS policy (default is 30 days)
+        options.Preload = true; // Optional: Enable HSTS preload list
+    });
+}
 
 // key vault
 ConfigurationBuilder azureBuilder = new ConfigurationBuilder();
@@ -57,8 +66,10 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
 }
+
+app.UseHsts();
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
