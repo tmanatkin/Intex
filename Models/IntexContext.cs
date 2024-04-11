@@ -28,6 +28,7 @@ public partial class IntexContext : DbContext
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<ItemRecommendation> ItemRecommendations { get; set; }
+    public virtual DbSet<UserRecommendation> UserRecommendations { get; set; }
 
 //     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 // // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -122,6 +123,32 @@ public partial class IntexContext : DbContext
             entity.Property(e => e.Rec2Name).HasColumnName("rec2_Name");
             entity.Property(e => e.Rec3Id).HasColumnName("rec3_ID");
             entity.Property(e => e.Rec3Name).HasColumnName("rec3_Name");
+        });
+
+        modelBuilder.Entity<UserRecommendation>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("userRec");
+
+            entity.Property(e => e.CustomerId).HasColumnName("customer_ID");
+            entity.Property(e => e.ProductId).HasColumnName("product_ID");
+            entity.Property(e => e.Rating).HasColumnName("rating");
+            entity.Property(e => e.RecId1).HasColumnName("recommended_item_1");
+            entity.Property(e => e.RecName1).HasColumnName("rec_item1_name");
+            entity.Property(e => e.RecImg1).HasColumnName("rec_item1_img_link");
+            entity.Property(e => e.RecId2).HasColumnName("recommended_item_2");
+            entity.Property(e => e.RecName2).HasColumnName("rec_item2_name");
+            entity.Property(e => e.RecImg2).HasColumnName("rec_item2_img_link"); 
+            entity.Property(e => e.RecId3).HasColumnName("recommended_item_3");
+            entity.Property(e => e.RecName3).HasColumnName("rec_item3_name");
+            entity.Property(e => e.RecImg3).HasColumnName("rec_item3_img_link"); 
+            entity.Property(e => e.RecId4).HasColumnName("recommended_item_4");
+            entity.Property(e => e.RecName4).HasColumnName("rec_item4_name");
+            entity.Property(e => e.RecImg4).HasColumnName("rec_item4_img_link"); 
+            entity.Property(e => e.RecId5).HasColumnName("recommended_item_5");
+            entity.Property(e => e.RecName5).HasColumnName("rec_item5_name");
+            entity.Property(e => e.RecImg5).HasColumnName("rec_item5_img_link");
         });
 
         OnModelCreatingPartial(modelBuilder);

@@ -7,6 +7,7 @@ namespace Intex.Models.ViewModels
         public IQueryable<Customer> Customers { get; set; }
         public IQueryable<LineItem> LineItems { get; set; }
         public IQueryable<ItemRecommendation> ItemRecommendations { get; set; }
+        public IQueryable<UserRecommendation> UserRecommendations { get; set; }
         public PaginationInfo PaginationInfo { get; set; } = new PaginationInfo();
     }
 }

@@ -7,5 +7,6 @@ namespace Intex.Models
         IQueryable<Customer> Customers { get; }
         IQueryable<LineItem> LineItems { get; }
         IQueryable<ItemRecommendation> ItemRecommendations { get; }
+        IQueryable<UserRecommendation> UserRecommendations { get; }
     }
 }
