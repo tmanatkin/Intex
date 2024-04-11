@@ -6,9 +6,12 @@
     @foreach (Product p in Model.Products)
     {
         <div>
-            <h2>@p.Name</h2>
-
+            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
+                <img src="@p.ImgLink" width="300px" />
+                <h2>@p.Name</h2>
+            </a>
         </div>
+
     }
 </div>
 

@@ -2,15 +2,16 @@
 
 <h1>LEGO BUILD</h1>
 
-<div id="listContainer">
-@foreach (Product p in Model.Products)
-{
-     <div>
-        <h2>@p.Name</h2>
-        
-    </div>
-}
-</div>
+<h3>View Our Highest Rated Products</h3>
 
-@* <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a> *@
-<div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Index"></div>
+<div id="listContainer">
+    @foreach (Product p in Model.Products)
+    {
+        <div>
+            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
+                <img src="@p.ImgLink" width="300px" />
+                <h7>@p.Name</h7>
+            </a>
+        </div>        
+    }
+</div>
