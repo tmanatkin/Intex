@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Query;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using System.Buffers.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Intex.Controllers;
 
@@ -31,10 +32,18 @@ public class HomeController : Controller
         //_recommendationService = new ItemRecommendation.ProductService();
     }
 
-    public IActionResult AboutUs()
+    public IActionResult Index()
     {
-        return View();
+        List<int> productIds = new List<int> { 23, 21, 22, 20, 13 };
+
+        var data = new ListViewModel
+        {
+            Products = _repo.Products
+                .Where(p => productIds.Contains(p.ProductId))
+        };
+        return View(data);
     }
+
     public IActionResult Products(int pageNum = 1)
     {
 
@@ -56,47 +65,16 @@ public class HomeController : Controller
 
         return View(data);
     }
+
     public IActionResult Privacy()
     {
         return View();
     }
-    public IActionResult Login()
+    
+    public IActionResult AboutUs()
     {
         return View();
     }
-
-    public IActionResult AdminHome()
-    {
-        return View();
-    }
-
-    public IActionResult EditProducts()
-    {
-        return View();
-    }
-    public IActionResult EditUsers()
-    {
-        return View();
-    }
-    public IActionResult Fraud()
-    {
-        return View();
-    }
-
-
-
-    public IActionResult Index()
-    {
-        List<int> productIds = new List<int> { 23, 21, 22, 20, 13 };
-
-        var data = new ListViewModel
-        {
-            Products = _repo.Products
-                .Where(p => productIds.Contains(p.ProductId))
-        };
-        return View(data);
-    }
-
 
     public IActionResult ProductDetail(int id)
     {
@@ -113,6 +91,25 @@ public class HomeController : Controller
         return View(product);
     }
 
+    [Authorize(Roles = "Admin")]
+    public IActionResult AdminHome()
+    {
+        return View();
+    }
+
+    [Authorize(Roles = "Admin")]
+    public IActionResult EditProducts()
+    {
+        return View();
+    }
+
+    [Authorize(Roles = "Admin")]
+    public IActionResult EditUsers()
+    {
+        return View();
+    }
+
+    [Authorize(Roles = "Admin")]
     public IActionResult ReviewOrders()
     {
         var records = _repo.Orderss
