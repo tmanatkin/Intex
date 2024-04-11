@@ -6,6 +6,8 @@ using Microsoft.ML.OnnxRuntime.Tensors;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Collections.Generic;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
+using System.Buffers.Text;
 
 namespace Intex.Controllers;
 
@@ -85,25 +87,30 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        List<int> productIds = new List<int> { 23, 21, 22, 20, 13 };
+
         var data = new ListViewModel
         {
             Products = _repo.Products
-                    //.OrderByDescending(p => p.ra)
-                    //.Take(),
-
-            
+                .Where(p => productIds.Contains(p.ProductId))
         };
-
         return View(data);
     }
 
-    public IActionResult ProductDetail()
-    {
-        var recommendations = _repo.ItemRecommendations
-            .ToList();
-        
 
-        return View(recommendations);
+    public IActionResult ProductDetail(int id)
+    {
+        // Retrieve the product details from the database based on the ID
+        var product = _repo.Products.FirstOrDefault(p => p.ProductId == id);
+
+        if (product == null)
+        {
+            // Handle the case where the product is not found
+            return NotFound();
+        }
+
+        // Pass the product details to the ProductDetail view
+        return View(product);
     }
 
     public IActionResult ReviewOrders()
