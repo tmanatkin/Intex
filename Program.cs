@@ -18,7 +18,7 @@ azureBuilder.AddAzureKeyVault(new Uri("https://IntexVault311.vault.azure.net/"),
 IConfiguration configuration = azureBuilder.Build();
 string connectionString = configuration["IntexConnectionString"];
 // Console.WriteLine($"Connection string: {connectionString}");
-
+//changes
 var dbContextOptions = new DbContextOptionsBuilder<IntexContext>()
     .UseSqlServer(connectionString)
     .Options;
@@ -26,6 +26,10 @@ var dbContextOptions = new DbContextOptionsBuilder<IntexContext>()
 builder.Services.AddSingleton(new IntexContext(dbContextOptions));
 
 builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
+builder.Services.AddRazorPages();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -40,6 +44,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseSession();
+
 app.UseRouting();
 
 app.UseAuthorization();
@@ -47,5 +53,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();
