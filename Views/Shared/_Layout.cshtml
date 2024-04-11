@@ -31,18 +31,9 @@
                 </li>
                 <li>
                     <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="AdminHome">Admin</a>
-                </li>
-                
-                @* @if (User.IsInRole("Admin")) *@
+                </li>            
             </ul>
             <partial name="_LoginPartial" />
-            <div class="nav-end nav-right">
-                <a  asp-area="" asp-controller="Home" asp-action="Products">Cart</a>
-                <a  asp-area="" asp-controller="Home" asp-action="Login">Log In</a>
-            </div>
         </nav>
     </header>
     <div class="body-container">
