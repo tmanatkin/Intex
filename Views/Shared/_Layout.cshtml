@@ -14,39 +14,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="bg-yellow">
-        <nav>
-            <a class="nav-end nav-left" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/legoLogo.png"/>
-            </a>
-            <ul>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Products">Products</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                </li>            
-            </ul>
-            <partial name="_LoginPartial" />
-        </nav>
-    </header>
-    <div class="body-container">
-        <main role="main" class="content-center-column">
-            @RenderBody()
-        </main>
-    </div>    @Html.Partial("_CookieConsentPartial")
+<header class="bg-yellow">
+    <nav>
+        <a class="nav-end nav-left" asp-area="" asp-controller="Home" asp-action="Index">
+            <img src="~/legoLogo.png"/>
+        </a>
+        <ul>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="Products">Products</a>
+            </li>
+            <li>
+                <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+            </li>            
+        </ul>
+        <partial name="_LoginPartial" />
+    </nav>
+</header>
+<div class="body-container">
+    <main role="main" class="content-center-column">
+        @RenderBody()
+    </main>
+</div>    @Html.Partial("_CookieConsentPartial")
 
-    <footer>
-        <p>&copy; 2024 - Intex</p>
-        <p>Group 3-11 this</p>
-        <a asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<footer>
+    <p>&copy; 2024 - Intex</p>
+    <p>Group 3-11 this</p>
+    <a asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
