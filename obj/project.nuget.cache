@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UMye2eydgS4bnmAWoTKuVq6rw2aIfr1zoFacOVh1TRRadeoKV7fRFUiAlppyF/wBO5dQ7Gm0KoJ4QuSPvDFnXA==",
+  "dgSpecHash": "QFGhwz3meOkQ8HcE4/ZGG+pFxb4QaVoUoyVBWwT6LN7vz+GA4lgROY3PssK/1/33VHspDsXPdNUM3LNcs4E9ag==",
   "success": true,
   "projectFilePath": "/Users/calebestes/413/Intex/Intex.csproj",
   "expectedPackageFiles": [
@@ -60,12 +60,32 @@
     "/Users/calebestes/.nuget/packages/humanizer.core.zh-cn/2.14.1/humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/humanizer.core.zh-hans/2.14.1/humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/humanizer.core.zh-hant/2.14.1/humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.authentication.cookies/2.2.0/microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.authentication.core/2.2.0/microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.authentication.microsoftaccount/8.0.4/microsoft.aspnetcore.authentication.microsoftaccount.8.0.4.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.authorization/8.0.0/microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.components/8.0.0/microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.components.analyzers/8.0.0/microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.components.forms/8.0.0/microsoft.aspnetcore.components.forms.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.components.web/8.0.0/microsoft.aspnetcore.components.web.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.cookiepolicy/2.2.8/microsoft.aspnetcore.cookiepolicy.2.2.8.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.cryptography.internal/8.0.3/microsoft.aspnetcore.cryptography.internal.8.0.3.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/8.0.3/microsoft.aspnetcore.cryptography.keyderivation.8.0.3.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.dataprotection/2.2.0/microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.dataprotection.abstractions/2.2.0/microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.hosting.abstractions/2.2.0/microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.hosting.server.abstractions/2.2.0/microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.http/2.2.0/microsoft.aspnetcore.http.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/8.0.3/microsoft.aspnetcore.identity.entityframeworkcore.8.0.3.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.identity.ui/8.0.3/microsoft.aspnetcore.identity.ui.8.0.3.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.metadata/8.0.0/microsoft.aspnetcore.metadata.8.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.24/microsoft.aspnetcore.razor.language.6.0.24.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.build/17.8.3/microsoft.build.17.8.3.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.build.framework/17.8.3/microsoft.build.framework.17.8.3.nupkg.sha512",
@@ -104,12 +124,15 @@
     "/Users/calebestes/.nuget/packages/microsoft.extensions.dependencymodel/8.0.0/microsoft.extensions.dependencymodel.8.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.fileproviders.abstractions/8.0.0/microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.fileproviders.embedded/8.0.3/microsoft.extensions.fileproviders.embedded.8.0.3.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.extensions.hosting.abstractions/2.2.0/microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.identity.core/8.0.3/microsoft.extensions.identity.core.8.0.3.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.identity.stores/8.0.3/microsoft.extensions.identity.stores.8.0.3.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.logging/8.0.0/microsoft.extensions.logging.8.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.extensions.objectpool/2.2.0/microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.extensions.webencoders/2.2.0/microsoft.extensions.webencoders.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.identity.client/4.60.1/microsoft.identity.client.4.60.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.identity.client.extensions.msal/4.60.1/microsoft.identity.client.extensions.msal.4.60.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.identitymodel.abstractions/6.35.0/microsoft.identitymodel.abstractions.6.35.0.nupkg.sha512",
@@ -118,14 +141,19 @@
     "/Users/calebestes/.nuget/packages/microsoft.identitymodel.protocols/6.35.0/microsoft.identitymodel.protocols.6.35.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/6.35.0/microsoft.identitymodel.protocols.openidconnect.6.35.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.identitymodel.tokens/6.35.0/microsoft.identitymodel.tokens.6.35.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.jsinterop/8.0.0/microsoft.jsinterop.8.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.ml/3.0.1/microsoft.ml.3.0.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.ml.cpumath/3.0.1/microsoft.ml.cpumath.3.0.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.ml.dataview/3.0.1/microsoft.ml.dataview.3.0.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.ml.onnxruntime/1.17.1/microsoft.ml.onnxruntime.1.17.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.ml.onnxruntime.managed/1.17.1/microsoft.ml.onnxruntime.managed.1.17.1.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.net.stringtools/17.8.3/microsoft.net.stringtools.17.8.3.nupkg.sha512",
-    "/Users/calebestes/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.netcore.platforms/2.0.0/microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.owin/4.2.2/microsoft.owin.4.2.2.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.owin.security/4.2.2/microsoft.owin.security.4.2.2.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.owin.security.cookies/4.2.2/microsoft.owin.security.cookies.4.2.2.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.visualstudio.web.codegeneration/8.0.2/microsoft.visualstudio.web.codegeneration.8.0.2.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.visualstudio.web.codegeneration.core/8.0.2/microsoft.visualstudio.web.codegeneration.core.8.0.2.nupkg.sha512",
@@ -134,6 +162,7 @@
     "/Users/calebestes/.nuget/packages/microsoft.visualstudio.web.codegeneration.templating/8.0.2/microsoft.visualstudio.web.codegeneration.templating.8.0.2.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.visualstudio.web.codegeneration.utils/8.0.2/microsoft.visualstudio.web.codegeneration.utils.8.0.2.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.visualstudio.web.codegenerators.mvc/8.0.2/microsoft.visualstudio.web.codegenerators.mvc.8.0.2.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/microsoft.win32.systemevents/7.0.0/microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/mono.texttemplating/2.3.1/mono.texttemplating.2.3.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
@@ -146,10 +175,13 @@
     "/Users/calebestes/.nuget/packages/nuget.projectmodel/6.9.1/nuget.projectmodel.6.9.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/nuget.protocol/6.9.1/nuget.protocol.6.9.1.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/nuget.versioning/6.9.1/nuget.versioning.6.9.1.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/owin/1.0.0/owin.1.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.6/sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/sweetalert2/1.0.1/sweetalert2.1.0.1.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.clientmodel/1.0.0/system.clientmodel.1.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.codedom/5.0.0/system.codedom.5.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.collections.immutable/7.0.0/system.collections.immutable.7.0.0.nupkg.sha512",
@@ -167,7 +199,7 @@
     "/Users/calebestes/.nuget/packages/system.formats.asn1/6.0.0/system.formats.asn1.6.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.identitymodel.tokens.jwt/6.35.0/system.identitymodel.tokens.jwt.6.35.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.io/4.3.0/system.io.4.3.0.nupkg.sha512",
-    "/Users/calebestes/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.numerics.tensors/8.0.0/system.numerics.tensors.8.0.0.nupkg.sha512",
@@ -181,9 +213,11 @@
     "/Users/calebestes/.nuget/packages/system.runtime/4.3.0/system.runtime.4.3.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.runtime.caching/6.0.0/system.runtime.caching.6.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/system.security.accesscontrol/4.5.0/system.security.accesscontrol.4.5.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.security.cryptography.cng/5.0.0/system.security.cryptography.cng.5.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.security.cryptography.pkcs/6.0.4/system.security.cryptography.pkcs.6.0.4.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.security.cryptography.protecteddata/7.0.0/system.security.cryptography.protecteddata.7.0.0.nupkg.sha512",
+    "/Users/calebestes/.nuget/packages/system.security.cryptography.xml/4.5.0/system.security.cryptography.xml.4.5.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.security.permissions/7.0.0/system.security.permissions.7.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.security.principal.windows/5.0.0/system.security.principal.windows.5.0.0.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
@@ -196,5 +230,46 @@
     "/Users/calebestes/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/calebestes/.nuget/packages/system.windows.extensions/7.0.0/system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin 4.2.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin.Security 4.2.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin.Security",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Owin.Security.Cookies 4.2.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Owin.Security.Cookies",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Owin",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

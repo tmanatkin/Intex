@@ -383,6 +383,7 @@
     </Content>
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)sweetalert2/1.0.1/buildTransitive/SweetAlert2.props" Condition="Exists('$(NuGetPackageRoot)sweetalert2/1.0.1/buildTransitive/SweetAlert2.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.3.4/buildTransitive/Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('$(NuGetPackageRoot)microsoft.codeanalysis.analyzers/3.3.4/buildTransitive/Microsoft.CodeAnalysis.Analyzers.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.ml.onnxruntime/1.17.1/build/netstandard2.1/Microsoft.ML.OnnxRuntime.props" Condition="Exists('$(NuGetPackageRoot)microsoft.ml.onnxruntime/1.17.1/build/netstandard2.1/Microsoft.ML.OnnxRuntime.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.ml/3.0.1/build/netstandard2.0/Microsoft.ML.props" Condition="Exists('$(NuGetPackageRoot)microsoft.ml/3.0.1/build/netstandard2.0/Microsoft.ML.props')" />

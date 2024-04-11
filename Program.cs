@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Intex.Models;
 using Intex.Areas.Identity.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();

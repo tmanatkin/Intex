@@ -345,3 +345,8 @@
 /Users/calebestes/413/Intex/obj/Debug/net8.0/Intex.pdb
 /Users/calebestes/413/Intex/obj/Debug/net8.0/Intex.genruntimeconfig.cache
 /Users/calebestes/413/Intex/obj/Debug/net8.0/ref/Intex.dll
+/Users/calebestes/413/Intex/bin/Debug/net8.0/Microsoft.Owin.dll
+/Users/calebestes/413/Intex/bin/Debug/net8.0/Microsoft.Owin.Security.dll
+/Users/calebestes/413/Intex/bin/Debug/net8.0/Microsoft.Owin.Security.Cookies.dll
+/Users/calebestes/413/Intex/bin/Debug/net8.0/Owin.dll
+/Users/calebestes/413/Intex/bin/Debug/net8.0/SweetAlert2.dll
