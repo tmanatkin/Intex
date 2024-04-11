@@ -15,3 +15,9 @@
         </div>        
     }
 </div>
+
+@* <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a> *@
+<div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Index"></div>
+
+
+    <button type="submit" class="btn-success">Submit</button>

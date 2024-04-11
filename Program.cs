@@ -1,27 +1,34 @@
 using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;//
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Intex.Models;
 using Intex.Areas.Identity.Data;
 
-// builder.Services.AddDbContext<IntexContext>(options =>
-// {
-//     options.UseSqlServer(builder.Configuration["ConnectionStrings:IntexConnection"]);
-// });
-
 var builder = WebApplication.CreateBuilder(args);
 
-// var identityConnectionString = builder.Configuration.GetConnectionString("IntexIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'IntexIdentityDbContextConnection' not found.");
-
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// key vault stuff
+// key vault
 ConfigurationBuilder azureBuilder = new ConfigurationBuilder();
 azureBuilder.AddAzureKeyVault(new Uri("https://IntexVault311.vault.azure.net/"), new DefaultAzureCredential());
 IConfiguration configuration = azureBuilder.Build();
 string connectionString = configuration["IntexConnectionString"];
-// Console.WriteLine($"Connection string: {connectionString}");
+
+// microsoft authenticator
+var keyVaultUri = new Uri("https://IntexVault311.vault.azure.net/");
+var client = new SecretClient(keyVaultUri, new DefaultAzureCredential());
+KeyVaultSecret clientID = await client.GetSecretAsync("MicrosoftAuthClientId");
+var ClientId = clientID.Value;
+KeyVaultSecret clientSecret = await client.GetSecretAsync("MicrosoftAuthClientSecret");
+var ClientSecret = clientSecret.Value;
+// Console.WriteLine($"Client Secret: {ClientSecret}");
+builder.Services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
+    {
+        microsoftOptions.ClientId = ClientId;//"Authentication:Microsoft:ClientId"];
+        microsoftOptions.ClientSecret = ClientSecret;//"Authentication:Microsoft:ClientSecret"];
+    });
 
 // identity tables
 builder.Services.AddDbContext<IntexIdentityDbContext>(options => options.UseSqlServer(connectionString));
@@ -33,6 +40,10 @@ var dbContextOptions = new DbContextOptionsBuilder<IntexContext>()
 builder.Services.AddSingleton(new IntexContext(dbContextOptions));
 
 builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
+builder.Services.AddRazorPages();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
         .AddEntityFrameworkStores<IntexIdentityDbContext>();
@@ -50,6 +61,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseSession();
+
 app.UseRouting();
 
 app.UseAuthentication();
@@ -58,6 +71,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages();
+
 app.MapRazorPages();
 
 app.Run();
