@@ -59,7 +59,7 @@
 
 <table class="table table-bordered table-striped">
     <thead>
-        <tr>
+        <tr class="review-orders-cols-names">
             <th>TransactionId</th>
             <th>CustomerId</th>
             <th>Date</th>
@@ -79,7 +79,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr class="review-orders">
                 <td>@item.Orderss.TransactionId</td>
                 <td>@item.Orderss.CustomerId</td>
                 <td>@item.Orderss.Date</td>
@@ -103,7 +103,7 @@
 <h2>Only those predicted to be Fraud</h2>
 <table class="table table-bordered table-striped">
     <thead>
-        <tr>
+        <tr class="review-orders-cols-names">
             <th>TransactionId</th>
             <th>CustomerId</th>
             <th>Date</th>
