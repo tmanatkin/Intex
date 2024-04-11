@@ -70,6 +70,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHsts();
 
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Content-Security-Policy", "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://m.media-amazon.com https://www.lego.com https://images.brickset.com https://www.brickeconomy.com");
+    await next();
+});
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
