@@ -26,26 +26,23 @@
             <a class="nav-end nav-left" asp-area="" asp-controller="Home" asp-action="Index">
                 <img src="~/legoLogo.png" />
             </a>
-            <ul>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Products">Products</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                </li>
-                <li>
-                    <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
-                </li>
-            </ul>
-            
-            <div>
-                <vc:cart-summary />
+            <div id="nav-link-container">
+                <ul>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Products">Products</a>
+                    </li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                    </li>
+                </ul>
+                <div>
+                    <vc:cart-summary />
+                </div>
+                <partial name="_LoginPartial" />
             </div>
-
-            <partial name="_LoginPartial" />
         </nav>
     </header>
     <div class="body-container">
@@ -56,7 +53,7 @@
 
     <footer>
         <p>&copy; 2024 - Intex</p>
-        <p>Group 3-11</p>
+        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
