@@ -41,11 +41,15 @@
                         <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
                     </li>
                 </ul>
+       
+
                 <div class="col-6 navbar-text text-end">
                     <vc:cart-summary />
                 </div>
                 <partial name="_LoginPartial" />
             </div>
+
+            
         </nav>
     </header>
 
@@ -55,6 +59,21 @@
             @RenderBody()
         </main>
     </div>
+
+    <div class="row m-b-1 p-1">
+        <div class="col-3">
+            <vc:product-categories />
+        </div>
+    </div>
+
+    <div class="row m-b-1 p-1">
+        <div class="col-3">
+            <vc:product-colors />
+        </div>
+    </div>
+
+
+
 
     <footer>
         <p>&copy; 2024 - Intex</p>

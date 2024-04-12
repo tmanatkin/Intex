@@ -95,7 +95,7 @@ public class HomeController : Controller
     }
 
 
-    public IActionResult Products(int pageNum = 1)
+    public IActionResult Products(string? category, string? color, int pageNum = 1)
     {
 
         int pageSize = 10;
@@ -103,8 +103,12 @@ public class HomeController : Controller
         var data = new ListViewModel
         {
             Products = _repo.Products
-                    .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize),
+                 .Where(x => (x.Category == category || category == null) &&
+                    (color == null || x.PrimaryColor == color || x.SecondaryColor == color))
+                 .OrderBy(x => x.ProductId)
+                 .Skip((pageNum - 1) * pageSize)
+                 .Take(pageSize),
+                  
 
             PaginationInfo = new PaginationInfo
             {
