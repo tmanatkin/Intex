@@ -43,6 +43,8 @@
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
+
+            
         </nav>
     </header>
 
@@ -52,6 +54,21 @@
             @RenderBody()
         </main>
     </div>
+
+    <div class="row m-b-1 p-1">
+        <div class="col-3">
+            <vc:product-categories />
+        </div>
+    </div>
+
+    <div class="row m-b-1 p-1">
+        <div class="col-3">
+            <vc:product-colors />
+        </div>
+    </div>
+
+
+
 
     <footer>
         <p>&copy; 2024 - Intex</p>
