@@ -11,11 +11,15 @@
 } *@
 
 <h1 id="title-main"><span>LEGO </span> <span>BUILD</span></h1>
+<h2 class="subtitle-main">by Aurora Brickwell</h2>
+<div class="seperator-container">
+    <div class="horizontal-seperator"></div>
+</div>
 
 @* Change title based on authentication *@
 @if (!User.Identity.IsAuthenticated || User.IsInRole("Admin"))
 {
-    <h2 class="subtitle-main">Master Builder Picks</h2>
+    <h2 class="subtitle-main color-blue">Master Builder Picks</h2>
     <div class="container-top-products">
 
         @foreach (Product p in Model.Products)
@@ -31,7 +35,7 @@
         }
     </div>
 
-    <h2 class="subtitle-main">Customer Favorites</h2>
+    <h2 class="subtitle-main color-red">Customer Favorites</h2>
     <div id="listContainer" class="container-top-products">
     @foreach (Product p in Model.Products)
     {
@@ -49,7 +53,7 @@
 
 else
 {
-    <h2 class="subtitle-main">Reccomended For You</h2>
+    <h2 class="subtitle-main color-red">Reccomended For You</h2>
     <div id="listContainer" class="container-top-products">
     @foreach (Product p in Model.Products)
     {
@@ -64,7 +68,7 @@ else
     }
     </div>
 
-    <h2 class="subtitle-main">Master Builder Picks</h2>
+    <h2 class="subtitle-main color-blue">Master Builder Picks</h2>
     <div class="container-top-products">
 
         @foreach (Product p in Model.Products)

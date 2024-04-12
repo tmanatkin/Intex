@@ -2,7 +2,10 @@
 @model ListViewModel
 
 <h1>All Products</h1>
-
+<div class="select-filter-container">
+    <vc:Categories />
+    <vc:Colors />
+</div>
 <div class="container-top-products">
     @foreach (Product p in Model.Products)
     {
