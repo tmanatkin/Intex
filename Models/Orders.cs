@@ -6,6 +6,7 @@ using static Intex.Models.Cart;
 namespace Intex.Models;
 public partial class Orders
 {
+    [BindNever] 
     public int? TransactionId { get; set; }
 
     [BindNever]

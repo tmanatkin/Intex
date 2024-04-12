@@ -3,16 +3,18 @@ using System.Security.Cryptography.Xml;
 using Intex.Infrastructure;
 using System.Text.Json.Serialization;
 using Microsoft.Build.Evaluation;
+
 namespace Intex.Models
 {
     public class SessionCart : Cart
     {
         public static Cart GetCart(IServiceProvider services)
         {
-            ISession? session = services.GetRequiredService<IHttpContextAccessor>()
+            ISession? session = 
+                services.GetRequiredService<IHttpContextAccessor>()
               .HttpContext?.Session;
-            SessionCart cart = session?.GetJson<SessionCart>("Cart") ??
-              new SessionCart();
+            SessionCart cart = session?.GetJson<SessionCart>("Cart")
+                ??new SessionCart();
             cart.Session = session;
             return cart;
         }

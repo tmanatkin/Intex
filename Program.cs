@@ -40,8 +40,8 @@ var dbContextOptions = new DbContextOptionsBuilder<IntexContext>()
 builder.Services.AddSingleton(new IntexContext(dbContextOptions));
 
 builder.Services.AddScoped<IIntexRepository, EFIntexRepository>();
-builder.Services.AddRazorPages();
 
+builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 
@@ -72,6 +72,7 @@ app.Use(async (context, next) =>
 });
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseSession();
