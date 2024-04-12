@@ -12,57 +12,74 @@
 
 <h1 id="title-main"><span>LEGO </span> <span>BUILD</span></h1>
 
-
-<h2 id="subtitle-main">Master Builder's Picks</h2>
-<div class="container-top-products">
-
-    @foreach (Product p in Model.Products.Take(5))
-    {
-        <div class="product">
-            <img src="@p.ImgLink" />
-            <h3 class="product-name">@p.Name</h3>
-            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
-        </div>
-    }
-</div>
-
-
+@* Change title based on authentication *@
 @if (!User.Identity.IsAuthenticated || User.IsInRole("Admin"))
 {
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
-        <link rel="stylesheet" href="~/css/style.css" />
-    </head>
+    <h2 class="subtitle-main">Master Builder Picks</h2>
+    <div class="container-top-products">
 
-    
+        @foreach (Product p in Model.Products)
+        {
+            @if (p.ProductId == 24 || p.ProductId == 30 || p.ProductId == 28 || p.ProductId == 10 || p.ProductId == 12)
+            {
+                <div class="product">
+                    <img src="@p.ImgLink" />
+                    <h3 class="product-name">@p.Name</h3>
+                    <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+                </div>
+            }
+        }
+    </div>
 
-    <h2>View Our Highest Rated Products</h2>
+    <h2 class="subtitle-main">Customer Favorites</h2>
+    <div id="listContainer" class="container-top-products">
+    @foreach (Product p in Model.Products)
+    {
+        @if (!(p.ProductId == 24 || p.ProductId == 30 || p.ProductId == 28 || p.ProductId == 10 || p.ProductId == 12))
+        {
+            <div class="product">
+                <img src="@p.ImgLink" />
+                <h3 class="product-name">@p.Name</h3>
+                <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+            </div>
+        }
+    }
+    </div>
 }
 
 else
 {
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
-        <link rel="stylesheet" href="~/css/style.css" />
-    </head>
-
-    <h2>Based on your history, we think you'll like these</h2>
-}    
-<div id="listContainer" class="container-top-products">
+    <h2 class="subtitle-main">Reccomended For You</h2>
+    <div id="listContainer" class="container-top-products">
     @foreach (Product p in Model.Products)
     {
-        <div class="product">
-            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
-                <img src="@p.ImgLink" height="150px" width="150px"/>
+        @if (!(p.ProductId == 24 || p.ProductId == 30 || p.ProductId == 28 || p.ProductId == 10 || p.ProductId == 12))
+        {
+            <div class="product">
+                <img src="@p.ImgLink" />
                 <h3 class="product-name">@p.Name</h3>
-            </a>
-        </div>    
+                <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+            </div>
+        }
     }
-</div>
+    </div>
+
+    <h2 class="subtitle-main">Master Builder Picks</h2>
+    <div class="container-top-products">
+
+        @foreach (Product p in Model.Products)
+        {
+            @if (p.ProductId == 24 || p.ProductId == 30 || p.ProductId == 28 || p.ProductId == 10 || p.ProductId == 12)
+            {
+                <div class="product">
+                    <img src="@p.ImgLink" />
+                    <h3 class="product-name">@p.Name</h3>
+                    <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+                </div>
+            }
+        }
+    </div>
+}
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

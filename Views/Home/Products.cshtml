@@ -16,3 +16,16 @@
 
 @* <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a> *@
 <div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Products" page-class-enabled="true" page-class-normal="normal-page-btn" page-class-selected="selected-page-btn"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.product-name').each(function() {
+            var maxWords = 3; // Maximum number of words to display
+            var text = $(this).text().trim().split(' ');
+            if (text.length > maxWords) {
+                $(this).text(text.slice(0, maxWords).join(' ') + '...');
+            }
+        });
+    });
+</script>
