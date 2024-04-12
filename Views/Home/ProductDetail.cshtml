@@ -24,11 +24,11 @@
             <li>@Model.Recommendations.Rec1Name</li>
         </a>
         <a href="@Url.Action("ProductDetail", "Home", new { id = Model.Recommendations.Rec2Id + 1 })">
-            <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec2Name" width="300px" />
+            @* <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec2Name" width="300px" /> *@
         <li>@Model.Recommendations.Rec2Name</li>
         </a>
         <a href="@Url.Action("ProductDetail", "Home", new { id = Model.Recommendations.Rec3Id + 1 })">
-            <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec3Name" width="300px" />
+            @* <img src="@Model.Product.ImgLink" alt="@Model.Recommendations.Rec3Name" width="300px" /> *@
         <li>@Model.Recommendations.Rec3Name</li>
         </a>
     </ul>

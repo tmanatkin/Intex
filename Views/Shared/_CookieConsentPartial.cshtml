@@ -1,0 +1,23 @@
+﻿@{
+    bool cookieAccepted = Context.Request.Cookies.ContainsKey("cookieConsent");
+}
+@if (!cookieAccepted)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        Swal.fire({
+            title: 'Cookie Consent',
+            text: 'This website uses cookies to ensure you get the best experience.',
+            icon: 'info',
+            confirmButtonText: 'Accept',
+            showCancelButton: true,
+            cancelButtonText: 'Decline'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.cookie = "cookieConsent=accepted; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+            } else {
+                // Handle decline action if needed
+            }
+        });
+    </script>
+}

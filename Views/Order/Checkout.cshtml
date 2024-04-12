@@ -1,0 +1,60 @@
+﻿@*
+  For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Orders
+<h2>Check out now</h2>
+<p>Please enter your details, and we'll ship your goods right away!</p>
+<form asp-action="Checkout" method="post">
+    <h3>Ship to</h3>
+    <div class="form-group">
+        <label>Customer:</label>
+        <input asp-for="CustomerId" class="form-control" />
+    </div>
+    <h3>Address</h3>
+    <div class="form-group">
+        <label>ShippingAddress:</label>
+        <input asp-for="ShippingAddress" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label> Date:</label>
+        <input asp-for="Date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Day Of Week:</label>
+        <input asp-for="DayOfWeek" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Time:</label>
+        <input asp-for="Time" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Entry Mode:</label>
+        <input asp-for="EntryMode" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Amount:</label>
+        <input asp-for="Amount " class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Type Of Transaction:</label>
+        <input asp-for="TypeOfTransaction " class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Country Of Transaction:</label>
+        <input asp-for="CountryOfTransaction " class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Bank:</label>
+        <input asp-for="Bank " class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Type Of Card:</label>
+        <input asp-for="TypeOfCard " class="form-control" />
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit"
+               value="Complete Order" />
+    </div>
+</form>
