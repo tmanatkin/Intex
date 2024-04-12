@@ -34,17 +34,17 @@ public class HomeController : Controller
         //_recommendationService = new ItemRecommendation.ProductService();
     }
 
-    public IActionResult Index()
-    {
-        List<int> productIds = new List<int> { 23, 21, 22, 20, 13, 24, 30, 28, 10, 12};
+    // public IActionResult Index()
+    // {
+    //     List<int> productIds = new List<int> { 23, 21, 22, 20, 13, 24, 30, 28, 10, 12};
 
-        var data = new ListViewModel
-        {
-            Products = _repo.Products
-                .Where(p => productIds.Contains(p.ProductId))
-        };
-        return View(data);
-    }
+    //     var data = new ListViewModel
+    //     {
+    //         Products = _repo.Products
+    //             .Where(p => productIds.Contains(p.ProductId))
+    //     };
+    //     return View(data);
+    // }
 
     //public IActionResult RecIndex()
     //{

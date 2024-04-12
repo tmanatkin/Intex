@@ -57,10 +57,19 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    // app.UseExceptionHandler("/Home/Error");
+    app.UseDeveloperExceptionPage();
 }
+
+// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+app.UseHsts();
+
+// Enable Content-Security-Policy (CSP) header
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-inline' https://code.jquery.com /js/bootstrap.js; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com /css/bootstrap.css; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://m.media-amazon.com https://www.lego.com https://images.brickset.com https://www.brickeconomy.com; connect-src 'self';");
+    await next();
+});
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
