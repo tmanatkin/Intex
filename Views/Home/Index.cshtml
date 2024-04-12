@@ -16,34 +16,41 @@
     <h1 class="subtitle">LEGO BUILD</h1>
 
     <h2>View Our Highest Rated Products</h2>
-
-    <div id="listContainer" class="container-top-products">
-        @foreach (Product p in Model.Products)
-        {
-            <div class="product">
-                <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
-                    <img src="@p.ImgLink" height="150px" width="150px"/>
-                    <h3 class="product-name">@p.Name</h3>
-                </a>
-            </div>    
-        }
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.product-name').each(function() {
-                var maxWords = 2; // Maximum number of words to display
-                var text = $(this).text().trim().split(' ');
-                if (text.length > maxWords) {
-                    $(this).text(text.slice(0, maxWords).join(' ') + '...');
-                }
-            });
-        });
-    </script>
 }
 
 else
 {
-    <h2>fail</h2>
-}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link rel="stylesheet" href="~/css/style.css" />
+    </head>
+    <h1 class="subtitle">LEGO BUILD</h1>
+
+    <h2>Based on your history, we think you'll like these</h2>
+}    
+<div id="listContainer" class="container-top-products">
+    @foreach (Product p in Model.Products)
+    {
+        <div class="product">
+            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
+                <img src="@p.ImgLink" height="150px" width="150px"/>
+                <h3 class="product-name">@p.Name</h3>
+            </a>
+        </div>    
+    }
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.product-name').each(function() {
+            var maxWords = 2; // Maximum number of words to display
+            var text = $(this).text().trim().split(' ');
+            if (text.length > maxWords) {
+                $(this).text(text.slice(0, maxWords).join(' ') + '...');
+            }
+        });
+    });
+</script>
