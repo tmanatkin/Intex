@@ -1,6 +1,5 @@
 using Azure.Identity;
-using Azure.Security.KeyVault.Secrets;//
-
+using Azure.Security.KeyVault.Secrets;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Intex.Models;
@@ -57,8 +56,18 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    // app.UseExceptionHandler("/Home/Error");
+    // app.UseExceptionHandler(“/Home/Error”);
     app.UseDeveloperExceptionPage();
+
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+
+    // Add X-Content-Type-Options Header
+    app.Use(async (context, next) =>
+    {
+        context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+        await next();
+    });
 }
 
 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
