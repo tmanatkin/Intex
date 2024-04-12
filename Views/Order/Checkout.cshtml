@@ -1,97 +1,105 @@
 ﻿@*
  For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+
 @model Orders
+
 <h2>Check out now</h2>
+
 <p>Please enter your details, and we'll ship your goods right away!</p>
+
 <form asp-action="Checkout" method="post">
-@*   <h3>Ship to</h3>
-  <div class="form-group">
-    <label>Customer:</label>
-    <input asp-for="CustomerId" class="form-control" />
-  </div>
-  <h3>Address</h3> *@
-  <div class="form-group">
-    <label>ShippingAddress:</label>
-    <select asp-for="ShippingAddress" class="form-control" >
-     <option value="India">India</option>
-    <option value="Russia">Russia</option>
-    <option value="UnitedKingdom">United Kingdom</option>
-     <option value="Other">Other</option>
-  </select>
-  </div>
-  <div class="form-group">
-    <label> Date:</label>
-    <input asp-for="Date" class="form-control" />
-  </div
-  <div class="form-group">
-  <label>Day Of Week:</label>
-  <select asp-for="DayOfWeek" class="form-control">
-    <option value="Mon">Monday</option>
-    <option value="Tue">Tuesday</option>
-    <option value="Wed">Wednesday</option>
-    <option value="Thu">Thursday</option>
-    <option value="Fri">Friday</option>
-    <option value="Sat">Saturday</option>
-    <option value="Sun">Sunday</option>
-  </select>
-</div>
-  <div class="form-group">
-  <label>Time (Military Format):</label>
-  <input asp-for="Time" class="form-control" placeholder="HH:mm" pattern="(?:[01]\d|2[0-3]):(?:[0-5]\d)" title="Enter time in military format (HH:mm)" />
-</div>
-  <div class="form-group">
-  <label>Entry Mode:</label>
-  <select asp-for="EntryMode" class="form-control">
-    <option value="Pin">Pin</option>
-    <option value="Tap">Tap</option>
-    <option value="Other">Other</option>
-  </select>
-</div>
-  <div class="form-group">
-    <label>Amount:</label>
-    <input asp-for="Amount " class="form-control" />
-  </div>
-  <div class="form-group">
-    <label>Type Of Transaction:</label>
-    <select asp-for="TypeOfTransaction " class="form-control" >
-    <option value="Online">Online</option>
-    <option value="POS">POS</option>
-    <option value="Other">Other</option>
-  </select>
-  </div>
-  <div class="form-group">
-    <label>Country Of Transaction:</label>
-    <select asp-for="CountryOfTransaction " class="form-control" >
-     <option value="India">India</option>
-    <option value="Russia">Russia</option>
-    <option value="UnitedKingdom">United Kingdom</option>
-    <option value="Other">Other</option>
-  </select>
-  </div>
-  <div class="form-group">
-    <label>Bank:</label>
-    <select asp-for="Bank " class="form-control" >
-     <option value="HSBC">HSBC</option>
-    <option value="Halifax">Halifax</option>
-    <option value="Lloyds">Lloyds</option>
-    <option value="Metro">Metro</option>
-    <option value="Monzo">Monzo</option>
-    <option value="RBS">RBS</option>
-    <option value="Other">Other</option>
-  </select>
-  </div>
-  <div class="form-group">
-    <label>Type Of Card:</label>
-    <select asp-for="TypeOfCard " class="form-control" >
-     <option value="Visa">Visa</option>
-    <option value="Other">Other</option>
-  </select>
-  </div>
-  <div class="text-center">
-    <input class="btn btn-primary" type="submit"
-        value="Complete Order" />
-  </div>
+
+    <div class="form-group">
+        <label>Shipping Address:</label>
+        <select asp-for="ShippingAddress" class="form-control">
+            <option value="India">India</option>
+            <option value="Russia">Russia</option>
+            <option value="UnitedKingdom">United Kingdom</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Date:</label>
+        <input asp-for="Date" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Day Of Week:</label>
+        <select asp-for="DayOfWeek" class="form-control">
+            <option value="Mon">Monday</option>
+            <option value="Tue">Tuesday</option>
+            <option value="Wed">Wednesday</option>
+            <option value="Thu">Thursday</option>
+            <option value="Fri">Friday</option>
+            <option value="Sat">Saturday</option>
+            <option value="Sun">Sunday</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Time (Military Hour):</label>
+        <input asp-for="Time" class="form-control" placeholder="HH:mm (24-hour format)" pattern="(?:[01]\d|2[0-3]):(?:[0-5]\d)" title="Enter time in military hour format (24-hour format)" />
+    </div>
+
+    <div class="form-group">
+        <label>Entry Mode:</label>
+        <select asp-for="EntryMode" class="form-control">
+            <option value="Pin">Pin</option>
+            <option value="Tap">Tap</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Amount:</label>
+        <input asp-for="Amount" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Type Of Transaction:</label>
+        <select asp-for="TypeOfTransaction" class="form-control">
+            <option value="Online">Online</option>
+            <option value="POS">POS</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Country Of Transaction:</label>
+        <select asp-for="CountryOfTransaction" class="form-control">
+            <option value="India">India</option>
+            <option value="Russia">Russia</option>
+            <option value="UnitedKingdom">United Kingdom</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Bank:</label>
+        <select asp-for="Bank" class="form-control">
+            <option value="HSBC">HSBC</option>
+            <option value="Halifax">Halifax</option>
+            <option value="Lloyds">Lloyds</option>
+            <option value="Metro">Metro</option>
+            <option value="Monzo">Monzo</option>
+            <option value="RBS">RBS</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Type Of Card:</label>
+        <select asp-for="TypeOfCard" class="form-control">
+            <option value="Visa">Visa</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+
 </form>
+

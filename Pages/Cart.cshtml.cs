@@ -1,38 +1,51 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Intex.Models;
 using Intex.Infrastructure;
-using System.Drawing;
-namespace Intex.Pages
-{
+using Intex.Models;
+using Microsoft.EntityFrameworkCore.Migrations;
+
+
+namespace Intex.Pages {
     public class CartModel : PageModel
     {
-        private IIntexRepository _repo;
-        public Cart Cart { get; set; }
-        public CartModel(IIntexRepository temp, Cart cartService)
+        private IIntexRepository repository;
+
+        public CartModel(IIntexRepository repo, Cart cartService)
         {
-            _repo = temp;
+            repository = repo;
             Cart = cartService;
         }
+
+        public Cart Cart { get; set; }
         public string ReturnUrl { get; set; } = "/";
+
         public void OnGet(string returnUrl)
         {
-            ReturnUrl = ReturnUrl ?? "/";
+            ReturnUrl = returnUrl ?? "/";
+            // Cart = HttpContext.Session.GetJson<Cart>("cart")
+            //    ?? new Cart();
         }
-        public IActionResult OnPost(int productId, string returnUrl)
+
+        public IActionResult OnPost(long productId, string returnUrl)
         {
-            Product prod = _repo.Products
-              .FirstOrDefault(x => x.ProductId == productId);
-            if (prod != null)
+            Product? product = repository.Products
+                .FirstOrDefault(p => p.ProductId == productId);
+            if (product != null)
             {
-                Cart.AddItem(prod, 1);
+                //Cart = HttpContext.Session.GetJson<Cart>("cart")
+                //    ?? new Cart();
+                Cart.AddItem(product, 1);
+                //HttpContext.Session.SetJson("cart", Cart);
             }
             return RedirectToPage(new { returnUrl = returnUrl });
         }
-        public IActionResult OnPostRemove(int productId, string returnUrl)
+        public IActionResult OnPostRemove(long productId,
+               string returnUrl)
         {
-            Cart.RemoveLine(Cart.Lines.First(x => x.Product.ProductId == productId).Product);
+            Cart.RemoveLine(Cart.Lines.First(cl =>
+                cl.Product.ProductId == productId).Product);
             return RedirectToPage(new { returnUrl = returnUrl });
+
         }
     }
 }

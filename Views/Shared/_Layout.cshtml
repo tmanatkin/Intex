@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="~/css/bootstrap-utilities.css">
     <link rel="stylesheet" href="~/css/bootstrap-utilities.rtl.css">
     <link rel="stylesheet" href="~/css/bootstrap.rtl.css">
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+   
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +41,7 @@
                         <a asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
                     </li>
                 </ul>
-                <div>
+                <div class="col-6 navbar-text text-end">
                     <vc:cart-summary />
                 </div>
                 <partial name="_LoginPartial" />
