@@ -36,4 +36,4 @@ namespace Intex.Models
             public int Quantity { get; set; }
         }
     }
-
+}

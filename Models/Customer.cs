@@ -18,4 +18,5 @@ public partial class Customer
     public string? Gender { get; set; }
 
     public float? Age { get; set; }
+    public string? Email { get; set; }
 }
