@@ -1,0 +1,45 @@
+﻿@* 
+@model IQueryable<string>
+
+<div class="d-grid gap-2">
+    @foreach (string c in Model ?? Enumerable.Empty<string>())
+    {
+        <a class="btn @(c == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")" asp-controller="Home" asp-action="BrowseProducts" asp-route-category="@c" asp-route-color="" asp-route-pageNum="1">@c</a>
+    }
+</div> *@
+
+@model IQueryable<string>
+<div>
+    <select id="categoryFilter" class="product-filter-select" onchange="changeProductCategory(this)">
+        <option value="">All Categories</option>
+        @foreach (string c in Model ?? Enumerable.Empty<string>()) //If model is empty, return an empty string
+        {
+            <option value="@c" class="@(c == ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")">@c</option>
+        }
+    </select>
+</div>
+<script>
+    function changeProductCategory(select) {
+        var selectedValue = select.value;
+        if (selectedValue === '') {
+            window.location.href = '@Url.Action("Products", "Home")'; // Redirect to /Product
+            return;
+        }
+        var url = '@Url.Action("Products", "Home")';
+        var params = '?category=' + encodeURIComponent(selectedValue) + '&pageNum=1';
+        window.location.href = url + params;
+    };
+    window.onload = function() {
+        var select = document.getElementById("categoryFilter");
+        var urlParams = new URLSearchParams(window.location.search);
+        var selectedCategory = urlParams.get('category');
+        if (selectedCategory) {
+            for (var i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === selectedCategory) {
+                    select.options[i].selected = true;
+                    break;
+                }
+            }
+        }
+    };
+</script>
