@@ -10,13 +10,6 @@
             <img src="@p.ImgLink"/>
             <h3 class="product-name">@p.Name</h3>
             <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
-
-            <form id=@p.ProductId method="post" asp-page="/Cart">
-                @* <input type="hidden" asp-for="ProductId" /> *@
-                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-                <button type="submit" class="btn-outline-success btn-sm float-end">Add to Cart</button>
-            </form>
-
         </div>
     }
 </div>

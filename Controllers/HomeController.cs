@@ -88,13 +88,82 @@ public class HomeController : Controller
     //    return RedirectToAction("Index", "Home");
     //}
 
+
+
+
+
+
+
+    public IActionResult Index()
+    {
+        List<int> productIds;
+
+        // Check if the user is authenticated
+        if (User.Identity.IsAuthenticated)
+        {
+            // Generate a random customer ID within the range of existing IDs in your database
+            Random random = new Random();
+            int userId = random.Next(1, 29100);
+
+            // Get the user recommendation based on the generated customer ID
+            var userRecommendation = _repo.UserRecommendations.FirstOrDefault(u => u.CustomerId == userId);
+
+            // Check if userRecommendation is null (no recommendation found for the user)
+            if (userRecommendation != null)
+            {
+                // Get the recommended product IDs
+                productIds = new List<int> {
+                (int)userRecommendation.RecId1,
+                (int)userRecommendation.RecId2,
+                (int)userRecommendation.RecId3,
+                (int)userRecommendation.RecId4,
+                (int)userRecommendation.RecId5
+            };
+            }
+            else
+            {
+                // If the user has no recommendations, show default products
+                productIds = new List<int> { 23, 21, 22, 20, 13 };
+            }
+        }
+        else
+        {
+            // If the user is not authenticated, show default products
+            productIds = new List<int> { 23, 21, 22, 20, 13 };
+        }
+
+
+
+        var data = new ListViewModel
+        {
+            Products = _repo.Products
+                .Where(p => productIds.Contains(p.ProductId))
+        };
+        return View(data);
+
+
+    //    // Retrieve products based on the productIds list
+    //    var products = _repo.Products.Where(p => productIds.Contains(p.ProductId)).ToList();
+
+    //    var defaultData = new ListViewModel
+    //    {
+    //        Products = products
+    //    };
+
+    //    return View(defaultData);
+    }
+
+
+
+
     //public IActionResult Index()
     //{
     //    // Check if the user is authenticated
     //    if (User.Identity.IsAuthenticated)
     //    {
     //        // Get the customer ID of the logged-in user
-    //        var userId = UserManager.GetUserId(User);
+    //        Random random = new Random();
+    //        int userId = random.Next(1, 29100);
     //        var userRecommendation = _repo.UserRecommendations.FirstOrDefault(u => u.CustomerId == userId);
 
     //        // Check if the user has recommendations
@@ -102,12 +171,12 @@ public class HomeController : Controller
     //        {
     //            // Get the recommended product IDs
     //            var recommendedProductIds = new List<int> {
-    //            userRecommendation.RecommendedProduct1Id,
-    //            userRecommendation.RecommendedProduct2Id,
-    //            userRecommendation.RecommendedProduct3Id,
-    //            userRecommendation.RecommendedProduct4Id,
-    //            userRecommendation.RecommendedProduct5Id
-    //        };
+    //                userRecommendation.RecId1,
+    //                userRecommendation.RecommendedProduct2Id,
+    //                userRecommendation.RecommendedProduct3Id,
+    //                userRecommendation.RecommendedProduct4Id,
+    //                userRecommendation.RecommendedProduct5Id
+    //            };
 
     //            // Get the recommended products
     //            var recommendedProducts = _repo.Products.Where(p => recommendedProductIds.Contains(p.ProductId)).ToList();
