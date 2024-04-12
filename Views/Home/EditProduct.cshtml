@@ -1,0 +1,39 @@
+@using Microsoft.CodeAnalysis
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Product
+<h1>Edit Product</h1>
+<form method=“post”>
+    <input type="hidden" asp-for=“@Model.ProductId” />
+    <label asp-for=“@Model.Name”>Product Name:</label>
+    <input asp-for=“@Model.Name” />
+    <br />
+    <label asp-for=“@Model.Year”>Year:</label>
+    <input asp-for=“@Model.Year” />
+    <br />
+    <label asp-for=“@Model.NumParts”>Number of Parts:</label>
+    <input asp-for=“@Model.NumParts” />
+    <br />
+    <label asp-for=“@Model.Price”>Price:</label>
+    <input asp-for=“@Model.Price” />
+    <br />
+    <label asp-for=“@Model.ImgLink”>Link to Image:</label>
+    <input asp-for=“@Model.ImgLink” />
+    <br />
+    <label asp-for=“@Model.PrimaryColor”>Primary Color:</label>
+    <input asp-for=“@Model.PrimaryColor” />
+    <br />
+    <label asp-for=“@Model.SecondaryColor”>Secondary Color:</label>
+    <input asp-for=“@Model.SecondaryColor” />
+    <br />
+    <label asp-for=“@Model.Description”>Description:</label>
+    <input asp-for=“@Model.Description” />
+    <br />
+    <label asp-for=“@Model.Category”>Category:</label>
+    <input asp-for=“@Model.Category” />
+
+    <button type="submit" class="btn btn-primary mb-5">Create New Product</button>
+</form>

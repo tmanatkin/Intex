@@ -11,6 +11,8 @@ using System.Buffers.Text;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNet.Identity;
+using Microsoft.Extensions.Azure;
+using System.Drawing.Printing;
 
 namespace Intex.Controllers;
 
@@ -33,18 +35,6 @@ public class HomeController : Controller
         // This is for Item Recommanmdations
         //_recommendationService = new ItemRecommendation.ProductService();
     }
-
-    //public IActionResult Index()
-    //{
-    //    List<int> productIds = new List<int> { 23, 21, 22, 20, 13, 24, 30, 28, 10, 12};
-
-    //    var data = new ListViewModel
-    //    {
-    //        Products = _repo.Products
-    //            .Where(p => productIds.Contains(p.ProductId))
-    //    };
-    //    return View(data);
-    //}
 
     public IActionResult Index()
     {
@@ -160,10 +150,51 @@ public class HomeController : Controller
         return View();
     }
 
-    [Authorize(Roles = "Admin")]
-    public IActionResult EditProducts()
+    public IActionResult AdminProducts()
     {
-        return View();
+        var data = new ListViewModel
+        {
+            Products = _repo.Products
+        };
+
+        return View(data);
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpGet]
+    public IActionResult AddProduct()
+    {
+        return View(new Product());
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    public IActionResult AddProduct(Product response)
+    {
+        _repo.AddProduct(response);
+
+        var products = _repo.Products.ToList();
+
+        return View("AdminProducts", products);
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpGet]
+    public IActionResult EditProduct(int id)
+    {
+        Product recordToEdit = _repo.Products
+            .Single(x => x.ProductId == id);
+
+        return View("AddProduct", recordToEdit);
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    public IActionResult EditProduct(Product updatedInfo)
+    {
+        _repo.EditProduct(updatedInfo);
+
+        return RedirectToAction("AdminProducts");
     }
 
     [Authorize(Roles = "Admin")]

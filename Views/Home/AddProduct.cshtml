@@ -1,0 +1,37 @@
+﻿@model Product
+
+<h1>Add a Product</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="ProductId"/>
+    <br />
+    <label asp-for="Name">Product Name:</label>
+    <input asp-for="Name" />
+    <br />
+    <label asp-for="Year">Year:</label>
+    <input asp-for="Year" />
+    <br />
+    <label asp-for="NumParts">Number of Parts:</label>
+    <input asp-for="NumParts" />
+    <br />
+    <label asp-for="Price">Price:</label>
+    <input asp-for="Price" />
+    <br />
+    <label asp-for="ImgLink">Link to Image:</label>
+    <input asp-for="ImgLink" />
+    <br />
+    <label asp-for="PrimaryColor">Primary Color:</label>
+    <input asp-for="PrimaryColor" />
+    <br />
+    <label asp-for="SecondaryColor">Secondary Color:</label>
+    <input asp-for="SecondaryColor" />
+    <br />
+    <label asp-for="Description">Description:</label>
+    <input asp-for="Description" />
+    <br />
+    <label asp-for="Category">Category:</label>
+    <input asp-for="Category" />
+
+    <button type="submit" class="btn btn-primary mb-5">Create New Product</button>
+</form>
+

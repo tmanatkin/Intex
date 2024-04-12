@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ListViewModel
+
+<body>
+    <div class="col-md-12">
+        <div class="row justify-content-center">
+            <!-- Bootstrap row to create horizontal groups and center content -->
+            <div class="col-md-2">
+                <!-- Bootstrap column to take up 2 columns on the left for buttons -->
+                <div>
+                    <!-- White container for buttons -->
+                    <div class="custom-nav">
+                        <!-- Navigation buttons -->
+                        <ul class="list-unstyled">
+                            <li class="col-md-12 mb-2 text-center">
+                                <a class="btn btn-primary btn-block" asp-controller="Home" asp-action="Orders">Orders</a>
+                            </li>
+                            <li class="col-md-12 mb-2 text-center">
+                                <a class="btn btn-primary btn-block" asp-controller="Home" asp-action="AdminProducts">Admin Products</a>
+                            </li>
+                            <li class="col-md-12 mb-2 text-center">
+                                <a class="btn btn-primary btn-block" asp-controller="Home" asp-action="AddProduct">Add Products</a>
+                            </li>
+                            <li class="col-md-12 mb-2 text-center">
+                                <a class="btn btn-primary btn-block" asp-controller="Home" asp-action="AdminUsers">Admin Users</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <!-- Bootstrap column to take up 10 columns for the white container -->
+                <div class="container-white mb-5">
+                    <!-- White container -->
+                    <h1 class="text-center">Admin Products</h1>
+                    <div class="container-form table-responsive">
+                        <!-- Table -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Year</th>
+                                    <th>Number of Parts</th>
+                                    <th>Price</th>
+                                    <th>Image Link</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var o in Model.Products)
+                                {
+                                    <tr>
+                                        <td>@o.Name</td>
+                                        <td>@o.Year</td>
+                                        <td>@o.NumParts</td>
+                                        <td>@o.Price</td>
+                                        <td>@o.ImgLink</td>
+                                        <td><a class="btn btn-info" asp-controller="Home" asp-action="EditProduct" asp-route-id="@o.ProductId">Edit</a></td>
+                                        <td><a class="btn btn-danger" asp-controller="Home" asp-action="DeleteConfirmationProduct" asp-route-id="@o.ProductId">Delete</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <!-- Add New Product button -->
+                        <a class="btn btn-primary mb-5" asp-controller="Home" asp-action="AddProduct">Add New Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

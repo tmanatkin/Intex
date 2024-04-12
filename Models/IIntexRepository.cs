@@ -8,5 +8,8 @@ namespace Intex.Models
         IQueryable<LineItem> LineItems { get; }
         IQueryable<ItemRecommendation> ItemRecommendations { get; }
         IQueryable<UserRecommendation> UserRecommendations { get; }
+        public void AddProduct(Product ProductId);
+        public void EditProduct(Product ProductId);
+        public void DeleteProduct(Product ProductId);
     }
 }
