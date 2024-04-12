@@ -34,64 +34,6 @@ public class HomeController : Controller
         //_recommendationService = new ItemRecommendation.ProductService();
     }
 
-    //public IActionResult Index()
-    //{
-    //    List<int> productIds = new List<int> { 23, 21, 22, 20, 13 };
-
-    //    var data = new ListViewModel
-    //    {
-    //        Products = _repo.Products
-    //            .Where(p => productIds.Contains(p.ProductId))
-    //    };
-    //    return View(data);
-    //}
-
-    //public IActionResult RecIndex()
-    //{
-    //    // Check if the user is authenticated
-    //    if (User.Identity.IsAuthenticated)
-    //    {
-    //        // Get the customer ID of the logged-in user
-    //        var userId = UserManager.GetUserId(User);
-
-    //        // Find recommendations for the user
-    //        var userRecommendation = _repo.UserRecommendations.FirstOrDefault(u => u.CustomerId == userId);
-
-    //        // Check if recommendations exist for the user
-    //        if (userRecommendation != null)
-    //        {
-    //            // Create a ViewModel to pass to the view
-    //            var viewModel = new UserRecommendation
-    //            {
-    //                RecId1 = userRecommendation.RecId1,
-    //                RecName1 = userRecommendation.RecName1,
-    //                RecImg1 = userRecommendation.RecImg1,
-    //                RecId2 = userRecommendation.RecId2,
-    //                RecName2 = userRecommendation.RecName2,
-    //                RecImg2 = userRecommendation.RecImg2,
-    //                RecId3 = userRecommendation.RecId3,
-    //                RecName3 = userRecommendation.RecName3,
-    //                RecImg3 = userRecommendation.RecImg3,
-    //                RecId4 = userRecommendation.RecId4,
-    //                RecName4 = userRecommendation.RecName4,
-    //                RecImg4 = userRecommendation.RecImg4,
-    //                RecId5 = userRecommendation.RecId5,
-    //                RecName5 = userRecommendation.RecName5,
-    //                RecImg5 = userRecommendation.RecImg5
-    //            };
-
-    //            return View(viewModel);
-    //        }
-    //    }
-
-    //    // If the user is not authenticated or has no recommendations, redirect to the default index page
-    //    return RedirectToAction("Index", "Home");
-    //}
-
-
-
-
-
 
 
     public IActionResult Index()
@@ -140,66 +82,7 @@ public class HomeController : Controller
                 .Where(p => productIds.Contains(p.ProductId))
         };
         return View(data);
-
-
-    //    // Retrieve products based on the productIds list
-    //    var products = _repo.Products.Where(p => productIds.Contains(p.ProductId)).ToList();
-
-    //    var defaultData = new ListViewModel
-    //    {
-    //        Products = products
-    //    };
-
-    //    return View(defaultData);
     }
-
-
-
-
-    //public IActionResult Index()
-    //{
-    //    // Check if the user is authenticated
-    //    if (User.Identity.IsAuthenticated)
-    //    {
-    //        // Get the customer ID of the logged-in user
-    //        Random random = new Random();
-    //        int userId = random.Next(1, 29100);
-    //        var userRecommendation = _repo.UserRecommendations.FirstOrDefault(u => u.CustomerId == userId);
-
-    //        // Check if the user has recommendations
-    //        if (userRecommendation != null)
-    //        {
-    //            // Get the recommended product IDs
-    //            var recommendedProductIds = new List<int> {
-    //                userRecommendation.RecId1,
-    //                userRecommendation.RecommendedProduct2Id,
-    //                userRecommendation.RecommendedProduct3Id,
-    //                userRecommendation.RecommendedProduct4Id,
-    //                userRecommendation.RecommendedProduct5Id
-    //            };
-
-    //            // Get the recommended products
-    //            var recommendedProducts = _repo.Products.Where(p => recommendedProductIds.Contains(p.ProductId)).ToList();
-
-    //            var data = new ListViewModel
-    //            {
-    //                Products = recommendedProducts
-    //            };
-
-    //            return View(data);
-    //        }
-    //    }
-
-    //    // If the user is not authenticated or has no recommendations, show default products
-    //    List<int> defaultProductIds = new List<int> { 23, 21, 22, 20, 13 };
-    //    var defaultData = new ListViewModel
-    //    {
-    //        Products = _repo.Products.Where(p => defaultProductIds.Contains(p.ProductId)).ToList()
-    //    };
-
-    //    return View(defaultData);
-    //}
-
 
 
     public IActionResult Products(int pageNum = 1)
