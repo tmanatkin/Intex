@@ -10,6 +10,22 @@
     var topRated = Model.Products.Skip(5).Take(5).ToList();
 } *@
 
+<h1 id="title-main"><span>LEGO </span> <span>BUILD</span></h1>
+
+
+<h2 id="subtitle-main">Master Builder's Picks</h2>
+<div class="container-top-products">
+
+    @foreach (Product p in Model.Products.Take(5))
+    {
+        <div class="product">
+            <img src="@p.ImgLink" />
+            <h3 class="product-name">@p.Name</h3>
+            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+        </div>
+    }
+</div>
+
 
 @if (!User.Identity.IsAuthenticated || User.IsInRole("Admin"))
 {
@@ -20,20 +36,7 @@
         <link rel="stylesheet" href="~/css/style.css" />
     </head>
 
-    <h1 id="title-main"><span>LEGO </span> <span>BUILD</span></h1>
-
-    @* <h2 id="subtitle-main">Master Builder's Picks</h2>
-    <div class="container-top-products">
-
-        @foreach (Product p in Model.Products.Take(5))
-        {
-            <div class="product">
-                    <img src="@p.ImgLink"/>
-                    <h3 class="product-name">@p.Name</h3>
-                    <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
-            </div>    
-        }
-    </div> *@
+    
 
     <h2>View Our Highest Rated Products</h2>
 }
@@ -46,7 +49,6 @@ else
         <title>Home Page</title>
         <link rel="stylesheet" href="~/css/style.css" />
     </head>
-    <h1 class="subtitle">LEGO BUILD</h1>
 
     <h2>Based on your history, we think you'll like these</h2>
 }    
