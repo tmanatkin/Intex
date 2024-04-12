@@ -1,6 +1,8 @@
 :root {
   --color-yellow: #ffde5a;
   --color-blue: #145da0;
+  --color-red: #d2272e;
+  --color-lightgrey: #c5c5c5;
 }
 
 body {
@@ -13,7 +15,32 @@ body {
 h1 {
   font-family: "Rubik Mono One", Arial, sans-serif;
   font-size: 2.5rem;
-  /* text-align: center; */
+  text-align: center;
+}
+
+#title-main {
+  font-size: 5em;
+  background-color: var(--color-yellow);
+  border-radius: 150px;
+  padding: 20px 0;
+  margin: 75px 0 100px 0;
+}
+
+#title-main > span:nth-child(1) {
+  color: var(--color-blue);
+}
+
+#title-main > span:nth-child(2) {
+  color: var(--color-red);
+}
+
+#subtitle-main {
+  margin: 25px 0 40px 0;
+  text-align: center;
+}
+
+iframe {
+  display: none;
 }
 
 header.bg-yellow {
@@ -197,31 +224,57 @@ footer p {
 }
 
 .container-top-products {
-  display: flex; /* Use flexbox */
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-  padding: 10px; /* Add padding to create space between container edges and products */
-  justify-content: center; /* Center items horizontally */
+  justify-content: center;
   align-items: center;
+  gap: 50px;
 }
 
 .product {
-  box-sizing: border-box; /* Include padding and border in the width calculation */
-  padding: 20px; /* Add padding to create space between products */
-  float: left; /* Float the product items to align them horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00000079;
+}
+
+.product img {
+  width: 175px;
+  height: 200px;
+  object-fit: contain;
 }
 
 .product-name {
-  color: #155793;
-  justify-content: center;
+  max-width: 150px;
+  height: 2.3em;
+  overflow: hidden;
+}
+
+.product a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid var(--color-blue);
+  border-radius: 5px;
+  background-color: var(--color-blue);
+  text-decoration: underline transparent;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.product a:hover {
+  background-color: transparent;
+  color: var(--color-blue);
 }
 
 h2 {
+  margin: 50px 0 0 0;
   font-family: "Rubik Mono One", Arial, sans-serif;
   font-size: 1.5rem;
-  /* text-align: center; */
 }
 
 .review-orders-cols-names {
@@ -230,4 +283,57 @@ h2 {
 
 .review-orders-cols-names > th {
   padding: 0 10px;
+}
+
+#paginationNavigation {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 50px 0 0 0;
+}
+
+#paginationNavigation a {
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid transparent;
+  transition: border 0.3s ease-in-out;
+}
+
+#paginationNavigation a:hover {
+  border: 1px solid var(--color-blue);
+}
+
+.normal-page-btn {
+  background-color: var(--color-lightgrey);
+}
+
+.selected-page-btn {
+  background-color: var(--color-blue);
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-details img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 50vh;
+}
+
+.product-details-small {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }

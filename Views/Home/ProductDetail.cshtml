@@ -1,26 +1,27 @@
 @using Intex.Infrastructure;
 @model Intex.Models.ProductDetailViewModel
 
-<h1>Product Details:</h1>
+@* <h1>Product Details:</h1> *@
 <h1>@Model.Product.Name</h1>
 
-<div>
-    <img src="@Model.Product.ImgLink" width="300px" />
+<div class="product-details">
+    <img src="@Model.Product.ImgLink"/>
     <p>Description: @Model.Product.Description</p>
-    <p>Category: @Model.Product.Category</p>
-    <p>Price: $@Model.Product.Price</p>
-    <p>Number of Parts: @Model.Product.NumParts</p>
-    <p>Year: @Model.Product.Year</p>
-    <p>Primary Color: @Model.Product.PrimaryColor</p>
-    <p>Secondary Color: @Model.Product.SecondaryColor</p>
-
-
-    <form id=@Model.Product.ProductId method="post" asp-page="/Cart">
-        <input type="hidden" asp-for="@Model.Product.ProductId" />
-        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
-        <button type="submit" class="btn-outline-success btn-sm float-end">Add to Cart</button>
-    </form>
+    <div class="product-details-small">
+        <p>Category: @Model.Product.Category</p>
+        <p>Price: $@Model.Product.Price</p>
+        <p>Number of Parts: @Model.Product.NumParts</p>
+        <p>Year: @Model.Product.Year</p>
+        <p>Primary Color: @Model.Product.PrimaryColor</p>
+        <p>Secondary Color: @Model.Product.SecondaryColor</p>
+    </div>
 </div>
+
+<form id=@Model.Product.ProductId method="post" asp-page="/Cart">
+    <input type="hidden" asp-for="@Model.Product.ProductId" />
+    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+    <button type="submit" class="btn-outline-success btn-sm float-end">Add to Cart</button>
+</form>
 
 <h2>Recommendations:</h2>
 @if (Model.Recommendations != null)

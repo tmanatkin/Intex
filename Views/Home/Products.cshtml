@@ -1,20 +1,18 @@
 @using Intex.Infrastructure;
 @model ListViewModel
 
-<h1>LEGO BUILD</h1>
+<h1>All Products</h1>
 
-<div id="listContainer">
+<div class="container-top-products">
     @foreach (Product p in Model.Products)
     {
-        <div>
-            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
-                <img src="@p.ImgLink" width="300px" />
-                <h2>@p.Name</h2>
-            </a>
+        <div class="product">
+            <img src="@p.ImgLink"/>
+            <h3 class="product-name">@p.Name</h3>
+            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
         </div>
-
     }
 </div>
 
 @* <a asp-controller="Home" asp-action="Index" asp-route-pageNum="1">1</a> *@
-<div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Products"></div>
+<div id="paginationNavigation" page-model="@Model.PaginationInfo" page-action="Products" page-class-enabled="true" page-class-normal="normal-page-btn" page-class-selected="selected-page-btn"></div>
