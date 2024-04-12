@@ -23,7 +23,7 @@ h1 {
   background-color: var(--color-yellow);
   border-radius: 150px;
   padding: 20px 0;
-  margin: 75px 0 100px 0;
+  margin: 75px 0;
 }
 
 #title-main > span:nth-child(1) {
@@ -34,8 +34,8 @@ h1 {
   color: var(--color-red);
 }
 
-.subtitle-main {
-  margin: 25px 0 40px 0;
+h2.subtitle-main {
+  margin: 100px 0 50px 0px;
   text-align: center;
 }
 
