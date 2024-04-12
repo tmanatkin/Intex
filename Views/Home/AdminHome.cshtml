@@ -10,16 +10,10 @@
     <link rel="stylesheet" href="~/css/admin.css"></link>
 </head>
 <body>
-<div class="container">
-    <li class="nav-item">
-        <a class="btn" asp-area="" asp-controller="Home" asp-action="EditProducts">Edit Products</a>
-    </li>
-    <li class="nav-item">
-        <a class="btn" asp-area="" asp-controller="Home" asp-action="EditUsers">Edit Users</a>
-    </li>  
-    <li class="nav-item">
-        <a class="btn" asp-area="" asp-controller="Home" asp-action="ReviewOrders">Review Fraud Charges</a>
-    </li>
+<div class="admin-nav-container">
+    <a class="admin-nav" asp-area="" asp-controller="Home" asp-action="EditProducts">Edit Products</a>
+    <a class="admin-nav" asp-area="" asp-controller="Home" asp-action="EditUsers">Edit Users</a>
+    <a class="admin-nav" asp-area="" asp-controller="Home" asp-action="ReviewOrders">Review Fraud Charges</a>
 </div>
 </body>
 </html>
