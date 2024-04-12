@@ -1,3 +1,4 @@
+@using Intex.Infrastructure;
 @model Intex.Models.ProductDetailViewModel
 
 <h1>Product Details:</h1>
@@ -12,6 +13,13 @@
     <p>Year: @Model.Product.Year</p>
     <p>Primary Color: @Model.Product.PrimaryColor</p>
     <p>Secondary Color: @Model.Product.SecondaryColor</p>
+
+
+    <form id=@Model.Product.ProductId method="post" asp-page="/Cart">
+        <input type="hidden" asp-for="@Model.Product.ProductId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <button type="submit" class="btn-outline-success btn-sm float-end">Add to Cart</button>
+    </form>
 </div>
 
 <h2>Recommendations:</h2>

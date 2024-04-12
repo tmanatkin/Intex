@@ -12,11 +12,11 @@
                 <h2>@p.Name</h2>
             </a>
 
-            <form id=@p.ProductId method="post" asp-page="/Cart">
-                @* <input type="hidden" asp-for="ProductId" /> *@
+ @*            <form id=@p.ProductId method="post" asp-page="/Cart">
+                <input type="hidden" asp-for="@p.ProductId" />
                 <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
                 <button type="submit" class="btn-outline-success btn-sm float-end">Add to Cart</button>
-            </form>
+            </form> *@
         </div>
 
     }
