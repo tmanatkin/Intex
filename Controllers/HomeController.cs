@@ -75,22 +75,24 @@ public class HomeController : Controller
             else
             {
                 // If the user has no recommendations, show default products
-                productIds = new List<int> { 23, 21, 22, 20, 13, 24, 30, 28, 10, 12 };
+                productIds = new List<int> { 23, 21, 22, 20, 13 };
             }
         }
         else
         {
             // If the user is not authenticated, show default products
-            productIds = new List<int> { 23, 21, 22, 20, 13, 24, 30, 28, 10, 12 };
+            productIds = new List<int> { 23, 21, 22, 20, 13 };
         }
 
-
+        // Add the 5 additional IDs to the list
+        productIds.AddRange(new List<int> { 24, 30, 28, 10, 12 });
 
         var data = new ListViewModel
         {
             Products = _repo.Products
                 .Where(p => productIds.Contains(p.ProductId))
         };
+
         return View(data);
     }
 

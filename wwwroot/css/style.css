@@ -34,7 +34,7 @@ h1 {
   color: var(--color-red);
 }
 
-#subtitle-main {
+.subtitle-main {
   margin: 25px 0 40px 0;
   text-align: center;
 }

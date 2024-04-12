@@ -12,17 +12,19 @@
 
 <h1 id="title-main"><span>LEGO </span> <span>BUILD</span></h1>
 
-
-<h2 id="subtitle-main">Master Builder's Picks</h2>
+<h2 class="subtitle-main">Master Builder's Picks</h2>
 <div class="container-top-products">
 
-    @foreach (Product p in Model.Products.Take(5))
+    @foreach (Product p in Model.Products)
     {
-        <div class="product">
-            <img src="@p.ImgLink" />
-            <h3 class="product-name">@p.Name</h3>
-            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
-        </div>
+        @if (p.ProductId == 24 || p.ProductId == 30 || p.ProductId == 28 || p.ProductId == 10 || p.ProductId == 12)
+        {
+            <div class="product">
+                <img src="@p.ImgLink" />
+                <h3 class="product-name">@p.Name</h3>
+                <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+            </div>
+        }
     }
 </div>
 
@@ -36,9 +38,9 @@
         <link rel="stylesheet" href="~/css/style.css" />
     </head>
 
-    
 
-    <h2>View Our Highest Rated Products</h2>
+
+    <h2 class="subtitle-main">View Our Highest Rated Products</h2>
 }
 
 else
@@ -50,17 +52,19 @@ else
         <link rel="stylesheet" href="~/css/style.css" />
     </head>
 
-    <h2>Based on your history, we think you'll like these</h2>
+    <h2 class="subtitle-main">Based on your history, we think you'll like these</h2>
 }    
 <div id="listContainer" class="container-top-products">
     @foreach (Product p in Model.Products)
     {
-        <div class="product">
-            <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
-                <img src="@p.ImgLink" height="150px" width="150px"/>
+        @if (!(p.ProductId == 24 || p.ProductId == 30 || p.ProductId == 28 || p.ProductId == 10 || p.ProductId == 12))
+        {
+            <div class="product">
+                <img src="@p.ImgLink" />
                 <h3 class="product-name">@p.Name</h3>
-            </a>
-        </div>    
+                <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+            </div>
+        }
     }
 </div>
 
