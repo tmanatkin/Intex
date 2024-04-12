@@ -36,7 +36,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        List<int> productIds = new List<int> { 23, 21, 22, 20, 13 };
+        List<int> productIds = new List<int> { 23, 21, 22, 20, 13, 24, 30, 28, 10, 12};
 
         var data = new ListViewModel
         {

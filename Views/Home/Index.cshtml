@@ -4,6 +4,12 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+@* @{
+    var productsCount = Model.Products.Count;
+    var ourPicks = Model.Products.Take(5).ToList();
+    var topRated = Model.Products.Skip(5).Take(5).ToList();
+} *@
+
 
 @if (!User.Identity.IsAuthenticated || User.IsInRole("Admin"))
 {
@@ -13,18 +19,31 @@
         <title>Home Page</title>
         <link rel="stylesheet" href="~/css/style.css" />
     </head>
-    <h1 class="subtitle">LEGO BUILD</h1>
 
-    <h2>View Our Highest Rated Products</h2>
+    <h1 id="title-main"><span>LEGO </span> <span>BUILD</span></h1>
 
-    <div id="listContainer" class="container-top-products">
-        @foreach (Product p in Model.Products)
+    <h2 id="subtitle-main">Master Builder's Picks</h2>
+    <div class="container-top-products">
+
+        @foreach (Product p in Model.Products.Take(5))
         {
             <div class="product">
-                <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">
-                    <img src="@p.ImgLink" height="150px" width="150px"/>
+                    <img src="@p.ImgLink"/>
                     <h3 class="product-name">@p.Name</h3>
-                </a>
+                    <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
+            </div>    
+        }
+    </div>
+
+    <h2 id="subtitle-main">Customer Favorites</h2>
+    <div class="container-top-products">
+
+        @foreach (Product p in Model.Products.Skip(5).Take(5))
+        {
+            <div class="product">
+                    <img src="@p.ImgLink"/>
+                    <h3 class="product-name">@p.Name</h3>
+                    <a href="@Url.Action("ProductDetail", "Home", new { id = p.ProductId })">View Product</a>
             </div>    
         }
     </div>
@@ -33,7 +52,7 @@
     <script>
         $(document).ready(function() {
             $('.product-name').each(function() {
-                var maxWords = 2; // Maximum number of words to display
+                var maxWords = 3; // Maximum number of words to display
                 var text = $(this).text().trim().split(' ');
                 if (text.length > maxWords) {
                     $(this).text(text.slice(0, maxWords).join(' ') + '...');

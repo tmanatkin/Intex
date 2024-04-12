@@ -1,17 +1,19 @@
 @model Intex.Models.ProductDetailViewModel
 
-<h1>Product Details:</h1>
+@* <h1>Product Details:</h1> *@
 <h1>@Model.Product.Name</h1>
 
-<div>
-    <img src="@Model.Product.ImgLink" width="300px" />
+<div class="product-details">
+    <img src="@Model.Product.ImgLink"/>
     <p>Description: @Model.Product.Description</p>
-    <p>Category: @Model.Product.Category</p>
-    <p>Price: $@Model.Product.Price</p>
-    <p>Number of Parts: @Model.Product.NumParts</p>
-    <p>Year: @Model.Product.Year</p>
-    <p>Primary Color: @Model.Product.PrimaryColor</p>
-    <p>Secondary Color: @Model.Product.SecondaryColor</p>
+    <div class="product-details-small">
+        <p>Category: @Model.Product.Category</p>
+        <p>Price: $@Model.Product.Price</p>
+        <p>Number of Parts: @Model.Product.NumParts</p>
+        <p>Year: @Model.Product.Year</p>
+        <p>Primary Color: @Model.Product.PrimaryColor</p>
+        <p>Secondary Color: @Model.Product.SecondaryColor</p>
+    </div>
 </div>
 
 <h2>Recommendations:</h2>
