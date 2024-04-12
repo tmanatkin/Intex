@@ -382,3 +382,27 @@ h2 {
 .color-blue {
   color: var(--color-blue);
 }
+
+.sticky-iframe {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  z-index: 999; /* Ensure the iframe appears on top of other content */
+}
+.circle {
+  width: 50px; /* Adjust size of circle */
+  height: 50px; /* Adjust size of circle */
+  background-color: #007bff; /* Adjust background color */
+  border-radius: 50%; /* Make it a circle */
+  overflow: hidden;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, border-radius 0.3s ease-in-out; /* Smooth transition */
+}
+.circle:hover {
+  width: 300px; /* Adjust expanded size */
+  height: 300px; /* Adjust expanded size */
+  border-radius: 10px; /* Adjust border radius for the expanded state */
+}
+iframe {
+  height: 100%;
+  border: none;
+}
