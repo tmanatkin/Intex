@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Intex.Models;
+
 namespace Intex.Controllers
 {
     public class OrderController : Controller

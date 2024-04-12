@@ -1,5 +1,6 @@
 ﻿using Intex.Models;
 using Microsoft.AspNetCore.Mvc;
+
 namespace Intex.Components
 {
     public class CartSummaryViewComponent : ViewComponent
