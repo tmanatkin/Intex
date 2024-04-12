@@ -251,6 +251,7 @@ footer p {
 
 .product-name {
   max-width: 150px;
+  font-size: 1.25em;
   height: 2.3em;
   overflow: hidden;
 }
